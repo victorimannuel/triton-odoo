@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="view_res_config_settings_form" model="ir.ui.view">
+        <field name="name">custom.home.menu.res.config.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <block title="Home Menu" id="custom_home_menu_settings">
+                    <setting
+                        string="Background"
+                        company_dependent="1"
+                        help="Set the background color used by the custom home menu."
+                    >
+                        <div class="w-50 row">
+                            <label for="custom_home_menu_background_color" string="Menu Background" class="d-block w-75 py-2"/>
+                            <field
+                                name="custom_home_menu_background_color"
+                                class="d-block w-25 p-0 m-0"
+                                widget="color"
+                            />
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
