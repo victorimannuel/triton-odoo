@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_country_state_view_form_indonesia_city" model="ir.ui.view">
+        <field name="name">res.country.state.form.indonesia.city</field>
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="city_ids"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

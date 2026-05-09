@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_district_view_search" model="ir.ui.view">
+        <field name="name">res.district.search</field>
+        <field name="model">res.district</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city_id"/>
+                <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="inactive" string="Inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_district_view_list" model="ir.ui.view">
+        <field name="name">res.district.list</field>
+        <field name="model">res.district</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="city_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="res_district_view_form" model="ir.ui.view">
+        <field name="name">res.district.form</field>
+        <field name="model">res.district</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="city_id"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="village_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_district_action" model="ir.actions.act_window">
+        <field name="name">Districts</field>
+        <field name="res_model">res.district</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="res_district_menu" parent="contacts.menu_localisation" action="res_district_action" sequence="92" groups="base.group_system"/>
+</odoo>

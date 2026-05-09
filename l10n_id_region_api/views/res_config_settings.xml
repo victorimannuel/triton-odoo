@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_config_settings_form_l10n_id_region_api" model="ir.ui.view">
+        <field name="name">res.config.settings.form.l10n.id.region.api</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <block title="Indonesia Region" id="l10n_id_region_settings">
+                    <setting string="Sync Region Master Data" help="Fetch and update region data from API by level.">
+                        <div class="d-flex flex-wrap gap-2">
+                            <button name="action_sync_indonesia_provinces" type="object" string="Sync Provinces" class="btn btn-secondary"/>
+                            <button name="action_sync_indonesia_cities" type="object" string="Sync Cities" class="btn btn-secondary"/>
+                            <button name="action_sync_indonesia_districts" type="object" string="Sync Districts" class="btn btn-secondary"/>
+                            <button name="action_sync_indonesia_villages" type="object" string="Sync Villages" class="btn btn-secondary"/>
+                            <button name="action_sync_indonesia_regions" type="object" string="Sync All" class="btn btn-primary"/>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
