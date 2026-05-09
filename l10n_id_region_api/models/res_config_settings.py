@@ -23,3 +23,13 @@ class ResConfigSettings(models.TransientModel):
 
     def action_sync_indonesia_villages(self):
         return self._sync_and_notify('action_sync_villages')
+
+    def action_sync_indonesia_districts_scoped(self):
+        self.ensure_one()
+        # Force full sync for stability: ignore province scope.
+        return self._sync_and_notify('action_sync_districts')
+
+    def action_sync_indonesia_villages_scoped(self):
+        self.ensure_one()
+        # Force full sync for stability: ignore province scope.
+        return self._sync_and_notify('action_sync_villages')

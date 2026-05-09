@@ -50,6 +50,47 @@ class RegionSyncService(models.AbstractModel):
         return (row.get('postal_code') or row.get('zip') or '').strip() or False
 
     @api.model
+    def _norm_text(self, text):
+        return ' '.join((text or '').strip().lower().split())
+
+    @api.model
+    def _resolve_scope_state(self, province_code):
+        """Resolve selected province to canonical API-backed state record."""
+        state = self.env['res.country.state'].sudo().search([('code', '=', province_code)], limit=1)
+        if not state:
+            return False
+
+        api_rows = self._fetch_rows('provinces.json')
+        api_by_code = {self._row_code(r): r for r in api_rows if self._row_code(r)}
+        if province_code in api_by_code:
+            return state
+
+        # User may select a non-API code state; map by province name.
+        state_name_key = self._norm_text(state.name)
+        mapped_row = next((r for r in api_rows if self._norm_text(self._row_name(r)) == state_name_key), None)
+        if not mapped_row:
+            return state
+
+        api_code = self._row_code(mapped_row)
+        if not api_code:
+            return state
+
+        country = self._get_id_country()
+        canonical_state = self.env['res.country.state'].sudo().search([
+            ('country_id', '=', country.id),
+            ('code', '=', api_code),
+        ], limit=1)
+        if canonical_state:
+            return canonical_state
+
+        # Ensure canonical state exists so scoped city/district relations can be found.
+        return self.env['res.country.state'].sudo().create({
+            'name': self._row_name(mapped_row),
+            'code': api_code,
+            'country_id': country.id,
+        })
+
+    @api.model
     def _fetch_rows(self, path):
         headers = {
             'User-Agent': (
@@ -199,14 +240,36 @@ class RegionSyncService(models.AbstractModel):
         return self._notify('Indonesia Region Sync', 'City sync completed successfully.')
 
     @api.model
-    def action_sync_districts(self):
-        _logger.info('Region sync started: districts')
+    def action_sync_districts(self, province_code=None):
+        _logger.info('Region sync started: districts%s', province_code and f' (province={province_code})' or '')
         district_by_code = self._prefetch_map('res.district', [])
 
         created = updated = 0
         seen_codes = set()
 
-        for city in self.env['res.city'].sudo().search([]):
+        city_domain = []
+        district_deactivate_domain = []
+        if province_code:
+            state = self._resolve_scope_state(province_code)
+            if not state:
+                raise UserError(f'Province code not found: {province_code}')
+            city_domain = [('state_id', '=', state.id)]
+            district_deactivate_domain = [('city_id.state_id', '=', state.id)]
+
+        cities = self.env['res.city'].sudo().with_context(active_test=False).search(city_domain)
+        if province_code and not cities:
+            _logger.info(
+                'Region sync districts scope has no cities for province=%s; running province+city sync first',
+                province_code,
+            )
+            self.action_sync_provinces()
+            self.action_sync_cities()
+            state = self._resolve_scope_state(province_code)
+            city_domain = [('state_id', '=', state.id)] if state else city_domain
+            district_deactivate_domain = [('city_id.state_id', '=', state.id)] if state else district_deactivate_domain
+            cities = self.env['res.city'].sudo().with_context(active_test=False).search(city_domain)
+        _logger.info('Region sync districts scope: cities=%s', len(cities))
+        for city in cities:
             for district in self._fetch_rows(f'districts/{city.code}.json'):
                 code = self._row_code(district)
                 if not code:
@@ -222,20 +285,32 @@ class RegionSyncService(models.AbstractModel):
                 else:
                     updated += 1
 
-        self._deactivate_missing('res.district', seen_codes)
+        # Keep deactivation inside sync scope when province filter is used.
+        self._deactivate_missing('res.district', seen_codes, district_deactivate_domain)
 
         _logger.info('Region sync finished: districts(c=%s,u=%s)', created, updated)
         return self._notify('Indonesia Region Sync', 'District sync completed successfully.')
 
     @api.model
-    def action_sync_villages(self):
-        _logger.info('Region sync started: villages')
+    def action_sync_villages(self, province_code=None):
+        _logger.info('Region sync started: villages%s', province_code and f' (province={province_code})' or '')
         village_by_code = self._prefetch_map('res.village', [])
 
         created = updated = 0
         seen_codes = set()
 
-        for district in self.env['res.district'].sudo().search([]):
+        district_domain = []
+        village_deactivate_domain = []
+        if province_code:
+            state = self.env['res.country.state'].sudo().search([('code', '=', province_code)], limit=1)
+            if not state:
+                raise UserError(f'Province code not found: {province_code}')
+            district_domain = [('city_id.state_id', '=', state.id)]
+            village_deactivate_domain = [('district_id.city_id.state_id', '=', state.id)]
+
+        districts = self.env['res.district'].sudo().with_context(active_test=False).search(district_domain)
+        _logger.info('Region sync villages scope: districts=%s', len(districts))
+        for district in districts:
             for village in self._fetch_rows(f'villages/{district.code}.json'):
                 code = self._row_code(village)
                 if not code:
@@ -252,7 +327,8 @@ class RegionSyncService(models.AbstractModel):
                 else:
                     updated += 1
 
-        self._deactivate_missing('res.village', seen_codes)
+        # Keep deactivation inside sync scope when province filter is used.
+        self._deactivate_missing('res.village', seen_codes, village_deactivate_domain)
 
         _logger.info('Region sync finished: villages(c=%s,u=%s)', created, updated)
         return self._notify('Indonesia Region Sync', 'Village sync completed successfully.')

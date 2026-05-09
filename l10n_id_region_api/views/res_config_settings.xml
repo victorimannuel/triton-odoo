@@ -7,12 +7,12 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@id='companies']" position="after">
                 <block title="Indonesia Region" id="l10n_id_region_settings">
-                    <setting string="Sync Region Master Data" help="Fetch and update region data from API by level.">
+                    <setting string="Sync Region Master Data" help="Fetch and update Indonesia region data from API.">
                         <div class="d-flex flex-wrap gap-2">
                             <button name="action_sync_indonesia_provinces" type="object" string="Sync Provinces" class="btn btn-secondary"/>
                             <button name="action_sync_indonesia_cities" type="object" string="Sync Cities" class="btn btn-secondary"/>
-                            <button name="action_sync_indonesia_districts" type="object" string="Sync Districts" class="btn btn-secondary"/>
-                            <button name="action_sync_indonesia_villages" type="object" string="Sync Villages" class="btn btn-secondary"/>
+                            <button name="action_sync_indonesia_districts_scoped" type="object" string="Sync Districts" class="btn btn-secondary"/>
+                            <button name="action_sync_indonesia_villages_scoped" type="object" string="Sync Villages" class="btn btn-secondary"/>
                             <button name="action_sync_indonesia_regions" type="object" string="Sync All" class="btn btn-primary"/>
                         </div>
                     </setting>
