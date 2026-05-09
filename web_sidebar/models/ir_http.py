@@ -14,6 +14,7 @@ class IrHttp(models.AbstractModel):
         return {
             'color_sidebar_text': '#DEE2E6',
             'color_sidebar_active': '#5D8DA8',
+            'color_sidebar_active_text': '#FFFFFF',
             'color_sidebar_background': '#111827',
         }
 

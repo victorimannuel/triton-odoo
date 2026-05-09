@@ -23,6 +23,10 @@
                             <field name="theme_color_sidebar_active" class="d-block w-25 p-0 m-0" widget="color"/>
                         </div>
                         <div class="w-50 row">
+                            <label for="theme_color_sidebar_active_text" string="Sidebar Active Text" class="d-block w-75 py-2"/>
+                            <field name="theme_color_sidebar_active_text" class="d-block w-25 p-0 m-0" widget="color"/>
+                        </div>
+                        <div class="w-50 row">
                             <label for="theme_color_sidebar_background" string="Sidebar Background" class="d-block w-75 py-2"/>
                             <field name="theme_color_sidebar_background" class="d-block w-25 p-0 m-0" widget="color"/>
                         </div>
@@ -33,4 +37,3 @@
 	</record>
 	
 </odoo>
-

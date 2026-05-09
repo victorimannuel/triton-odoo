@@ -28,6 +28,10 @@ class ResConfigSettings(models.TransientModel):
         string='Sidebar Active Color'
     )
 
+    theme_color_sidebar_active_text = fields.Char(
+        string='Sidebar Active Text Color'
+    )
+
     theme_color_sidebar_background = fields.Char(
         string='Sidebar Background Color'
     )
@@ -40,6 +44,7 @@ class ResConfigSettings(models.TransientModel):
         return {
             'sidebar-text': self.theme_color_sidebar_text or '#DEE2E6',
             'sidebar-active': self.theme_color_sidebar_active or '#5D8DA8',
+            'sidebar-active-text': self.theme_color_sidebar_active_text or '#FFFFFF',
             'sidebar-background': self.theme_color_sidebar_background or '#111827',
         }
 
@@ -105,6 +110,7 @@ class ResConfigSettings(models.TransientModel):
         res.update(
             theme_color_sidebar_text=IrParam.get_param('web_sidebar.color_sidebar_text', '#DEE2E6'),
             theme_color_sidebar_active=IrParam.get_param('web_sidebar.color_sidebar_active', '#5D8DA8'),
+            theme_color_sidebar_active_text=IrParam.get_param('web_sidebar.color_sidebar_active_text', '#FFFFFF'),
             theme_color_sidebar_background=IrParam.get_param('web_sidebar.color_sidebar_background', '#111827'),
         )
         return res
@@ -114,5 +120,6 @@ class ResConfigSettings(models.TransientModel):
         IrParam = self.env['ir.config_parameter'].sudo()
         IrParam.set_param('web_sidebar.color_sidebar_text', self.theme_color_sidebar_text)
         IrParam.set_param('web_sidebar.color_sidebar_active', self.theme_color_sidebar_active)
+        IrParam.set_param('web_sidebar.color_sidebar_active_text', self.theme_color_sidebar_active_text)
         IrParam.set_param('web_sidebar.color_sidebar_background', self.theme_color_sidebar_background)
         self._save_scss_attachment()

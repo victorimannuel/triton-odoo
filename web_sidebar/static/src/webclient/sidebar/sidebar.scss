@@ -37,12 +37,15 @@
 		    }
 	        > li.active > a {
 			    background: $sidebar-active;
+                color: $sidebar-active-text;
 	        }
             > li.is-open > a {
                 background: $sidebar-active;
+                color: $sidebar-active-text;
             }
 	        > li:hover > a {
 			    background: $sidebar-active;
+                color: $sidebar-active-text;
 	        }
             .sidebar_submenu {
                 display: none;
@@ -61,9 +64,11 @@
                 }
                 li.active > a {
                     background: $sidebar-active;
+                    color: $sidebar-active-text;
                 }
                 li:hover > a {
                     background: $sidebar-active;
+                    color: $sidebar-active-text;
                 }
             }
 	    }
@@ -112,11 +117,13 @@
 
 .sidebar_panel .sidebar .sidebar_menu > li > .sidebar_flyout .sidebar_submenu li.active > a {
     background: $sidebar-active;
+    color: $sidebar-active-text;
     border-left-color: rgba($sidebar-text, 0.9);
 }
 
 .sidebar_panel .sidebar .sidebar_menu > li > .sidebar_flyout .sidebar_submenu li:hover > a {
     background: $sidebar-active;
+    color: $sidebar-active-text;
 }
 
 .sidebar_type_large {
