@@ -1,6 +1,6 @@
 .sidebar_panel {
     @include sidebar-disable-scrollbar();
-    background-color: $sidebar-background;
+    background-color: var(--tkg-sidebar-background, #111827);
     width: var(--sidebar-width, 0);
     overflow-y: auto;
     overflow-x: visible;
@@ -27,7 +27,7 @@
 	            overflow: hidden;
 	            padding: 8px 12px;
 	            text-decoration: none;
-	            color: $sidebar-text;
+	            color: var(--tkg-sidebar-text, #DEE2E6);
 	            text-overflow: ellipsis;
 	            .sidebar_icon {
 				    width: 22px;
@@ -36,16 +36,16 @@
 				}
 		    }
 	        > li.active > a {
-			    background: $sidebar-active;
-                color: $sidebar-active-text;
+			    background: var(--tkg-sidebar-active, #5D8DA8);
+                color: var(--tkg-sidebar-active-text, #FFFFFF);
 	        }
             > li.is-open > a {
-                background: $sidebar-active;
-                color: $sidebar-active-text;
-            }
+                background: var(--tkg-sidebar-active, #5D8DA8);
+                color: var(--tkg-sidebar-active-text, #FFFFFF);
+	        }
 	        > li:hover > a {
-			    background: $sidebar-active;
-                color: $sidebar-active-text;
+			    background: var(--tkg-sidebar-active, #5D8DA8);
+                color: var(--tkg-sidebar-active-text, #FFFFFF);
 	        }
             .sidebar_submenu {
                 display: none;
@@ -59,16 +59,16 @@
                     overflow: hidden;
                     padding: 6px 11px;
                     text-decoration: none;
-                    color: $sidebar-text;
+                    color: var(--tkg-sidebar-text, #DEE2E6);
                     text-overflow: ellipsis;
                 }
                 li.active > a {
-                    background: $sidebar-active;
-                    color: $sidebar-active-text;
+                    background: var(--tkg-sidebar-active, #5D8DA8);
+                    color: var(--tkg-sidebar-active-text, #FFFFFF);
                 }
                 li:hover > a {
-                    background: $sidebar-active;
-                    color: $sidebar-active-text;
+                    background: var(--tkg-sidebar-active, #5D8DA8);
+                    color: var(--tkg-sidebar-active-text, #FFFFFF);
                 }
             }
 	    }
@@ -83,10 +83,10 @@
     max-width: 380px;
     max-height: 80vh;
     overflow-y: auto;
-    background: $sidebar-background;
-    border: 1px solid rgba($sidebar-text, 0.1);
+    background: var(--tkg-sidebar-background, #111827);
+    border: 1px solid rgba(222, 226, 230, 0.1);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-    color: $sidebar-text;
+    color: var(--tkg-sidebar-text, #DEE2E6);
     padding: 8px 0;
     z-index: 5001;
 }
@@ -109,21 +109,21 @@
     font-weight: 400;
     padding: 8px 12px;
     text-decoration: none;
-    color: $sidebar-text;
+    color: var(--tkg-sidebar-text, #DEE2E6);
     white-space: normal;
     line-height: 1.35;
     border-left: 2px solid transparent;
 }
 
 .sidebar_panel .sidebar .sidebar_menu > li > .sidebar_flyout .sidebar_submenu li.active > a {
-    background: $sidebar-active;
-    color: $sidebar-active-text;
-    border-left-color: rgba($sidebar-text, 0.9);
+    background: var(--tkg-sidebar-active, #5D8DA8);
+    color: var(--tkg-sidebar-active-text, #FFFFFF);
+    border-left-color: rgba(222, 226, 230, 0.9);
 }
 
 .sidebar_panel .sidebar .sidebar_menu > li > .sidebar_flyout .sidebar_submenu li:hover > a {
-    background: $sidebar-active;
-    color: $sidebar-active-text;
+    background: var(--tkg-sidebar-active, #5D8DA8);
+    color: var(--tkg-sidebar-active-text, #FFFFFF);
 }
 
 .sidebar_type_large {

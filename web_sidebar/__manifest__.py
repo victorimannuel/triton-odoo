@@ -26,7 +26,6 @@
     'assets': {
         'web._assets_primary_variables': [
             'web_sidebar/static/src/scss/variables.scss',
-            'web_sidebar/static/src/scss/colors.scss',
         ],
         'web._assets_backend_helpers': [
             'web_sidebar/static/src/scss/mixins.scss',
@@ -58,6 +57,11 @@
                 'after',
                 'web/static/src/webclient/webclient.js',
                 'web_sidebar/static/src/webclient/sidebar/sidebar.js',
+            ),
+            (
+                'after',
+                'web/static/src/webclient/webclient.js',
+                'web_sidebar/static/src/webclient/sidebar/sidebar_colors.js',
             ),
             'web_sidebar/static/src/webclient/webclient.scss',
             'web_sidebar/static/src/webclient/navbar.xml',
