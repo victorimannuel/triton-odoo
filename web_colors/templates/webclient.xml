@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap"/>
+</odoo>

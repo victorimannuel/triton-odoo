@@ -1,0 +1,62 @@
+:root {
+    --wc-brand: #243742;
+    --wc-primary: #5D8DA8;
+    --wc-success: #28A745;
+    --wc-info: #17A2B8;
+    --wc-warning: #FFAC00;
+    --wc-danger: #DC3545;
+}
+
+.o_web_client {
+    .btn-primary {
+        background-color: var(--wc-primary) !important;
+        border-color: var(--wc-primary) !important;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .show > .btn-primary.dropdown-toggle {
+        background-color: color-mix(in srgb, var(--wc-primary) 88%, black) !important;
+        border-color: color-mix(in srgb, var(--wc-primary) 78%, black) !important;
+    }
+
+    .btn-outline-primary {
+        color: var(--wc-primary) !important;
+        border-color: var(--wc-primary) !important;
+    }
+
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus,
+    .btn-outline-primary:active,
+    .btn-outline-primary.active,
+    .show > .btn-outline-primary.dropdown-toggle {
+        color: #fff !important;
+        background-color: var(--wc-primary) !important;
+        border-color: var(--wc-primary) !important;
+    }
+
+    .bg-primary {
+        background-color: var(--wc-primary) !important;
+    }
+
+    .form-check-input:checked,
+    .form-check-input[type="checkbox"]:indeterminate {
+        background-color: var(--wc-primary) !important;
+        border-color: var(--wc-primary) !important;
+    }
+
+    .form-check-input:focus,
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--wc-primary) !important;
+        box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--wc-primary) 25%, transparent) !important;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+        background-color: var(--wc-primary) !important;
+        border-color: var(--wc-primary) !important;
+    }
+}
