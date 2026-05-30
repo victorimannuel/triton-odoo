@@ -122,6 +122,37 @@
     margin-top: 4px;
 }
 
+.o_account_board_dashboard .kpi-budget {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.o_account_board_dashboard .kpi-attainment {
+    border-radius: 999px;
+    padding: 1px 6px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.o_account_board_dashboard .att-good {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.o_account_board_dashboard .att-warn {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.o_account_board_dashboard .att-bad {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
 .o_account_board_dashboard .kpi-skeleton-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(140px, 1fr));

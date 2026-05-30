@@ -133,10 +133,88 @@ class AccountBoardKpiSummary(models.Model):
         for row in self.env.cr.dictfetchall():
             company_bs_map[row["company_id"]] = row
 
+        # Budget aggregation from account_budget_oca
+        # crossovered_budget_lines: planned_amount prorated to the MTD/YTD window
+        # by the fraction (overlap_days / line_total_days).
+        # We bucket accounts via account_budget_rel -> account_account.account_type.
+        # Only confirmed/validated budgets are included.
+        company_budget_map = {}
+        self.env.cr.execute(
+            """
+            SELECT
+                cbl.company_id,
+                aa.account_type,
+                -- MTD: overlap of line date range with current month
+                SUM(
+                    CASE
+                        WHEN cbl.date_to < date_trunc('month', CURRENT_DATE)::date
+                          OR cbl.date_from > (date_trunc('month', CURRENT_DATE) + INTERVAL '1 month - 1 day')::date
+                        THEN 0
+                        ELSE cbl.planned_amount
+                             * GREATEST(0,
+                                 (LEAST(cbl.date_to, (date_trunc('month', CURRENT_DATE) + INTERVAL '1 month - 1 day')::date)
+                                  - GREATEST(cbl.date_from, date_trunc('month', CURRENT_DATE)::date) + 1)::float
+                               / NULLIF((cbl.date_to - cbl.date_from + 1)::float, 0)
+                             )
+                    END
+                ) AS planned_mtd,
+                -- YTD: overlap of line date range with current year-to-date
+                SUM(
+                    CASE
+                        WHEN cbl.date_to < date_trunc('year', CURRENT_DATE)::date
+                          OR cbl.date_from > CURRENT_DATE
+                        THEN 0
+                        ELSE cbl.planned_amount
+                             * GREATEST(0,
+                                 (LEAST(cbl.date_to, CURRENT_DATE)
+                                  - GREATEST(cbl.date_from, date_trunc('year', CURRENT_DATE)::date) + 1)::float
+                               / NULLIF((cbl.date_to - cbl.date_from + 1)::float, 0)
+                             )
+                    END
+                ) AS planned_ytd
+            FROM crossovered_budget_lines cbl
+            JOIN crossovered_budget cb ON cb.id = cbl.crossovered_budget_id
+            JOIN account_budget_rel abr ON abr.budget_id = cbl.general_budget_id
+            JOIN account_account aa ON aa.id = abr.account_id
+            WHERE cb.state IN ('confirm', 'validate', 'done')
+              AND cbl.company_id IN %s
+            GROUP BY cbl.company_id, aa.account_type
+            """,
+            [company_ids]
+        )
+        for row in self.env.cr.dictfetchall():
+            cid = row["company_id"]
+            if cid not in company_budget_map:
+                company_budget_map[cid] = {}
+            atype = row["account_type"]
+            company_budget_map[cid][atype] = {
+                "planned_mtd": row["planned_mtd"] or 0.0,
+                "planned_ytd": row["planned_ytd"] or 0.0,
+            }
+
+        def _budget_sum(bmap, atypes, key):
+            return sum(bmap.get(at, {}).get(key, 0.0) for at in atypes)
+
         summary_data = []
         for rec in self.search([], order="company_id"):
             pl_vals = company_pl_map.get(rec.company_id.id, {})
             bs_vals = company_bs_map.get(rec.company_id.id, {})
+            bmap = company_budget_map.get(rec.company_id.id, {})
+
+            # Revenue budget: income + income_other (positive = planned income)
+            rev_bgt_mtd = _budget_sum(bmap, ["income", "income_other"], "planned_mtd")
+            rev_bgt_ytd = _budget_sum(bmap, ["income", "income_other"], "planned_ytd")
+            # COGS budget
+            cogs_bgt_mtd = _budget_sum(bmap, ["expense_direct_cost"], "planned_mtd")
+            cogs_bgt_ytd = _budget_sum(bmap, ["expense_direct_cost"], "planned_ytd")
+            # OPEX budget
+            opex_bgt_mtd = _budget_sum(
+                bmap, ["expense", "expense_other", "expense_depreciation"], "planned_mtd"
+            )
+            opex_bgt_ytd = _budget_sum(
+                bmap, ["expense", "expense_other", "expense_depreciation"], "planned_ytd"
+            )
+
             summary_data.append(
                 {
                     "company_id": rec.company_id.id,
@@ -154,7 +232,7 @@ class AccountBoardKpiSummary(models.Model):
                     "cogs_ytd": pl_vals.get("cogs_ytd", 0.0),
                     "opex_mtd": pl_vals.get("opex_mtd", 0.0),
                     "opex_ytd": pl_vals.get("opex_ytd", 0.0),
-                    
+
                     "revenue_mtd_prev": rec.revenue_mtd_prev,
                     "revenue_ytd_prev": rec.revenue_ytd_prev,
                     "gross_profit_mtd_prev": rec.gross_profit_mtd_prev,
@@ -171,6 +249,17 @@ class AccountBoardKpiSummary(models.Model):
                     "total_assets": bs_vals.get("total_assets", 0.0),
                     "total_liabilities": bs_vals.get("total_liabilities", 0.0),
                     "total_equity": bs_vals.get("total_equity", 0.0),
+                    # Budget vs Actual
+                    "revenue_budget_mtd": rev_bgt_mtd,
+                    "revenue_budget_ytd": rev_bgt_ytd,
+                    "cogs_budget_mtd": cogs_bgt_mtd,
+                    "cogs_budget_ytd": cogs_bgt_ytd,
+                    "opex_budget_mtd": opex_bgt_mtd,
+                    "opex_budget_ytd": opex_bgt_ytd,
+                    "gross_profit_budget_mtd": rev_bgt_mtd - cogs_bgt_mtd,
+                    "gross_profit_budget_ytd": rev_bgt_ytd - cogs_bgt_ytd,
+                    "net_profit_budget_mtd": rev_bgt_mtd - cogs_bgt_mtd - opex_bgt_mtd,
+                    "net_profit_budget_ytd": rev_bgt_ytd - cogs_bgt_ytd - opex_bgt_ytd,
                 }
             )
 

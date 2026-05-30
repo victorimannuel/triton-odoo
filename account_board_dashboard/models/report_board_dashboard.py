@@ -16,7 +16,6 @@ class ReportBoardDashboardPdf(models.AbstractModel):
 
         def total(key):
             return sum(float(rec.get(key) or 0.0) for rec in summary)
-
         headline = {
             "period": period.upper(),
             "revenue": total("revenue_mtd" if period == "mtd" else "revenue_ytd"),
@@ -77,6 +76,27 @@ class ReportBoardDashboardPdf(models.AbstractModel):
             rec["net_margin_pct"] = (rec["net_profit"] / revenue * 100.0) if revenue else 0.0
             trend.append(rec)
 
+        sfx = "mtd" if period == "mtd" else "ytd"
+        budget_data = {
+            "revenue": total(f"revenue_budget_{sfx}"),
+            "gross_profit": total(f"gross_profit_budget_{sfx}"),
+            "net_profit": total(f"net_profit_budget_{sfx}"),
+            "cogs": total(f"cogs_budget_{sfx}"),
+            "opex": total(f"opex_budget_{sfx}"),
+            "currency": headline["currency"],
+            # Actual gross profit, computed from summary dicts (not ORM recordset)
+            "gross_profit_actual": total(f"gross_profit_{sfx}"),
+        }
+
+        def _var_pct(actual, budget):
+            if not budget:
+                return None
+            return round((actual / budget) * 100.0, 1)
+
+        budget_data["revenue_pct"] = _var_pct(headline["revenue"], budget_data["revenue"])
+        budget_data["gross_profit_pct"] = _var_pct(budget_data["gross_profit_actual"], budget_data["gross_profit"])
+        budget_data["net_profit_pct"] = _var_pct(headline["net_profit"], budget_data["net_profit"])
+
         return {
             "doc_ids": docids,
             "doc_model": "account.board.kpi.summary",
@@ -85,4 +105,5 @@ class ReportBoardDashboardPdf(models.AbstractModel):
             "revenue_share": revenue_share,
             "trend": trend,
             "risks": risks,
+            "budget_data": budget_data,
         }

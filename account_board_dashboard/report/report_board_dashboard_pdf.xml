@@ -61,6 +61,40 @@
                         <span t-esc="risks['overdue_90']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/>
                         (<span t-esc="'%.1f' % risks['overdue_90_pct']"/>%)
                     </p>
+
+                    <t t-if="budget_data and budget_data.get('revenue', 0)">
+                        <h3>Budget vs Actual</h3>
+                        <table class="table table-sm" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th style="text-align:right;">Actual</th>
+                                    <th style="text-align:right;">Budget</th>
+                                    <th style="text-align:right;">Attainment %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Revenue</td>
+                                    <td style="text-align:right;"><span t-esc="headline['revenue']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/></td>
+                                    <td style="text-align:right;"><span t-esc="budget_data['revenue']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/></td>
+                                    <td style="text-align:right;"><span t-esc="'%.1f%%' % budget_data['revenue_pct'] if budget_data.get('revenue_pct') is not None else '-'"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Contribution Profit</td>
+                                    <td style="text-align:right;"><span t-esc="budget_data['gross_profit_actual']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/></td>
+                                    <td style="text-align:right;"><span t-esc="budget_data['gross_profit']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/></td>
+                                    <td style="text-align:right;"><span t-esc="'%.1f%%' % budget_data['gross_profit_pct'] if budget_data.get('gross_profit_pct') is not None else '-'"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Net Profit</td>
+                                    <td style="text-align:right;"><span t-esc="headline['net_profit']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/></td>
+                                    <td style="text-align:right;"><span t-esc="budget_data['net_profit']" t-options="{'widget': 'monetary', 'display_currency': env.company.currency_id}"/></td>
+                                    <td style="text-align:right;"><span t-esc="'%.1f%%' % budget_data['net_profit_pct'] if budget_data.get('net_profit_pct') is not None else '-'"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
                 </div>
             </t>
         </t>

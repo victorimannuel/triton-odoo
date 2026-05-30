@@ -5,7 +5,7 @@
     "category": "Accounting/Accounting",
     "author": "TRITON",
     "license": "LGPL-3",
-    "depends": ["account", "spreadsheet_dashboard"],
+    "depends": ["account", "spreadsheet_dashboard", "account_budget_oca"],
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",

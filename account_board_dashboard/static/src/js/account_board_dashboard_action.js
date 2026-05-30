@@ -192,10 +192,18 @@ class AccountBoardDashboardAction extends Component {
         const dso = revenue ? (Math.abs(ar) / Math.abs(summary.reduce((x, s) => x + Number(s.revenue_ytd || 0), 0))) * daysYtd : 0;
         const dpo = cogsYtd ? (Math.abs(ap) / Math.abs(cogsYtd)) * daysYtd : 0;
 
+        // Budget totals
+        const suffix = isMtd ? "mtd" : "ytd";
+        const revenueBudget = summary.reduce((a, s) => a + Number(s[`revenue_budget_${suffix}`] || 0), 0);
+        const grossProfitBudget = summary.reduce((a, s) => a + Number(s[`gross_profit_budget_${suffix}`] || 0), 0);
+        const netProfitBudget = summary.reduce((a, s) => a + Number(s[`net_profit_budget_${suffix}`] || 0), 0);
+
+        const attainmentPct = (actual, budget) => budget ? Math.round((actual / budget) * 100) : null;
+
         return [
-            { key: "revenue", label: isMtd ? "Revenue MTD" : "Revenue YTD", type: "money", value: revenue, currencyCode },
-            { key: "gross_profit", label: isMtd ? "Contribution Profit MTD" : "Contribution Profit YTD", type: "money", value: grossProfit, currencyCode },
-            { key: "net_profit", label: isMtd ? "Net Profit MTD" : "Net Profit YTD", type: "money", value: netProfit, currencyCode },
+            { key: "revenue", label: isMtd ? "Revenue MTD" : "Revenue YTD", type: "money", value: revenue, currencyCode, budget: revenueBudget, attainmentPct: attainmentPct(revenue, revenueBudget) },
+            { key: "gross_profit", label: isMtd ? "Contribution Profit MTD" : "Contribution Profit YTD", type: "money", value: grossProfit, currencyCode, budget: grossProfitBudget, attainmentPct: attainmentPct(grossProfit, grossProfitBudget) },
+            { key: "net_profit", label: isMtd ? "Net Profit MTD" : "Net Profit YTD", type: "money", value: netProfit, currencyCode, budget: netProfitBudget, attainmentPct: attainmentPct(netProfit, netProfitBudget) },
             { key: "cash", label: "Cash Balance", type: "money", value: cash, currencyCode },
             { key: "ar", label: "AR Open", type: "money", value: ar, currencyCode },
             { key: "ap", label: "AP Open", type: "money", value: ap, currencyCode },
@@ -383,35 +391,46 @@ class AccountBoardDashboardAction extends Component {
         const opexPrev = Math.abs(summary.reduce((a, s) => a + Number(s[`opex_${prevKey}`] || 0), 0));
         const netProfitPrev = summary.reduce((a, s) => a + Number(s[`net_profit_${prevKey}`] || 0), 0);
 
-        const buildRow = (label, current, previous, invertColor = false) => {
-            const variance = current - previous;
-            const pct = previous ? (variance / Math.abs(previous)) * 100 : 0;
-            let status = "neutral";
-            if (variance > 0) status = invertColor ? "bad" : "good";
-            if (variance < 0) status = invertColor ? "good" : "bad";
-            if (Math.abs(variance) < 0.01) status = "neutral";
-            
-            return {
-                label,
-                current,
-                previous,
-                variance,
-                pct,
-                status
-            };
+        // Budget values
+        const revenueBudget = summary.reduce((a, s) => a + Number(s[`revenue_budget_${key}`] || 0), 0);
+        const cogsBudget = summary.reduce((a, s) => a + Number(s[`cogs_budget_${key}`] || 0), 0);
+        const grossProfitBudget = summary.reduce((a, s) => a + Number(s[`gross_profit_budget_${key}`] || 0), 0);
+        const opexBudget = summary.reduce((a, s) => a + Number(s[`opex_budget_${key}`] || 0), 0);
+        const netProfitBudget = summary.reduce((a, s) => a + Number(s[`net_profit_budget_${key}`] || 0), 0);
+        const hasBudget = revenueBudget !== 0 || netProfitBudget !== 0;
+
+        const buildRow = (label, current, previous, budget, invertColor = false) => {
+            const variancePrev = current - previous;
+            const pctPrev = previous ? (variancePrev / Math.abs(previous)) * 100 : 0;
+            let statusPrev = "neutral";
+            if (variancePrev > 0) statusPrev = invertColor ? "bad" : "good";
+            if (variancePrev < 0) statusPrev = invertColor ? "good" : "bad";
+            if (Math.abs(variancePrev) < 0.01) statusPrev = "neutral";
+
+            const varianceBudget = budget !== 0 ? current - budget : null;
+            const pctBudget = budget ? (varianceBudget / Math.abs(budget)) * 100 : null;
+            let statusBudget = "neutral";
+            if (varianceBudget !== null) {
+                if (varianceBudget > 0) statusBudget = invertColor ? "bad" : "good";
+                if (varianceBudget < 0) statusBudget = invertColor ? "good" : "bad";
+                if (Math.abs(varianceBudget) < 0.01) statusBudget = "neutral";
+            }
+
+            return { label, current, previous, budget, variancePrev, pctPrev, statusPrev, varianceBudget, pctBudget, statusBudget };
         };
 
         return {
             currencyCode,
             periodLabel: isMtd ? "MTD" : "YTD",
             prevPeriodLabel: isMtd ? "MTD (Prev Year)" : "YTD (Prev Year)",
+            hasBudget,
             rows: [
-                buildRow("Revenue", revenue, revenuePrev),
-                buildRow("Direct Cost (COGS)", cogs, cogsPrev, true),
-                buildRow("Contribution Profit", grossProfit, grossProfitPrev),
-                buildRow("Operating Expenses", opex, opexPrev, true),
-                buildRow("Net Profit", netProfit, netProfitPrev)
-            ]
+                buildRow("Revenue", revenue, revenuePrev, revenueBudget),
+                buildRow("Direct Cost (COGS)", cogs, cogsPrev, cogsBudget, true),
+                buildRow("Contribution Profit", grossProfit, grossProfitPrev, grossProfitBudget),
+                buildRow("Operating Expenses", opex, opexPrev, opexBudget, true),
+                buildRow("Net Profit", netProfit, netProfitPrev, netProfitBudget),
+            ],
         };
     }
 

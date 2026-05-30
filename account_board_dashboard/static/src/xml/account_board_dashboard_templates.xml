@@ -40,6 +40,13 @@
                             <div class="kpi-label"><t t-esc="kpi.label"/> <span t-att-class="'kpi-target kpi-target-' + kpi.target.level"><t t-esc="kpi.target.label"/></span></div>
                             <div class="kpi-value" t-if="kpi.type == 'money'"><t t-esc="formatCurrency(kpi.value, kpi.currencyCode)"/></div>
                             <div class="kpi-value" t-else=""><t t-esc="Math.round((kpi.value || 0) * 100) / 100"/></div>
+                            <!-- Budget line (revenue, gross_profit, net_profit only) -->
+                            <div class="kpi-budget" t-if="kpi.budget != null and kpi.budget !== 0">
+                                Budget: <t t-esc="formatCurrency(kpi.budget, kpi.currencyCode)"/>
+                                <span t-if="kpi.attainmentPct != null" t-att-class="'kpi-attainment ' + (kpi.attainmentPct >= 100 ? 'att-good' : kpi.attainmentPct >= 80 ? 'att-warn' : 'att-bad')">
+                                    <t t-esc="kpi.attainmentPct"/>%
+                                </span>
+                            </div>
                             <div class="kpi-delta" t-if="kpi.key == 'ar' || kpi.key == 'ap'">Click to view entries</div>
                             <div class="kpi-delta" t-if="kpi.key == 'revenue' and state.kpiDeltas.revenueDeltaPct">MoM: <t t-esc="Math.round(state.kpiDeltas.revenueDeltaPct * 10) / 10"/>%</div>
                             <div class="kpi-delta" t-if="kpi.key == 'revenue' and state.kpiDeltas.revenueYoYPct">YoY: <t t-esc="Math.round(state.kpiDeltas.revenueYoYPct * 10) / 10"/>%</div>
@@ -213,16 +220,20 @@
                         <div class="col-12 col-xl-6" t-if="state.periodComparison">
                             <div class="card shadow-sm h-100">
                                 <div class="card-header">
-                                    Period Comparison (<t t-esc="state.periodComparison.periodLabel"/> vs <t t-esc="state.periodComparison.prevPeriodLabel"/>)
+                                    P&amp;L vs Budget (<t t-esc="state.periodComparison.periodLabel"/> vs <t t-esc="state.periodComparison.prevPeriodLabel"/><t t-if="state.periodComparison.hasBudget"> vs Budget</t>)
                                 </div>
                                 <div class="card-body p-0">
                                     <table class="table table-sm mb-0">
                                         <thead>
                                             <tr>
                                                 <th>Metric</th>
-                                                <th class="text-end">Current</th>
-                                                <th class="text-end">Previous</th>
-                                                <th class="text-end">Variance</th>
+                                                <th class="text-end">Actual</th>
+                                                <th class="text-end">Prev Year</th>
+                                                <th class="text-end">YoY Var</th>
+                                                <t t-if="state.periodComparison.hasBudget">
+                                                    <th class="text-end">Budget</th>
+                                                    <th class="text-end">vs Budget</th>
+                                                </t>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -231,10 +242,21 @@
                                                 <td class="text-end"><t t-esc="formatCurrency(row.current, state.periodComparison.currencyCode)"/></td>
                                                 <td class="text-end"><t t-esc="formatCurrency(row.previous, state.periodComparison.currencyCode)"/></td>
                                                 <td class="text-end">
-                                                    <span t-att-class="'badge ' + (row.status == 'good' ? 'bg-success' : (row.status == 'bad' ? 'bg-danger' : 'bg-secondary'))">
-                                                        <t t-if="row.variance > 0">+</t><t t-esc="Math.round(row.pct * 10) / 10"/>%
+                                                    <span t-att-class="'badge ' + (row.statusPrev == 'good' ? 'bg-success' : (row.statusPrev == 'bad' ? 'bg-danger' : 'bg-secondary'))">
+                                                        <t t-if="row.variancePrev > 0">+</t><t t-esc="Math.round(row.pctPrev * 10) / 10"/>%
                                                     </span>
                                                 </td>
+                                                <t t-if="state.periodComparison.hasBudget">
+                                                    <td class="text-end"><t t-esc="row.budget != null and row.budget !== 0 ? formatCurrency(row.budget, state.periodComparison.currencyCode) : '-'"/></td>
+                                                    <td class="text-end">
+                                                        <t t-if="row.varianceBudget != null">
+                                                            <span t-att-class="'badge ' + (row.statusBudget == 'good' ? 'bg-success' : (row.statusBudget == 'bad' ? 'bg-danger' : 'bg-secondary'))">
+                                                                <t t-if="row.varianceBudget > 0">+</t><t t-esc="Math.round(row.pctBudget * 10) / 10"/>%
+                                                            </span>
+                                                        </t>
+                                                        <t t-else="">-</t>
+                                                    </td>
+                                                </t>
                                             </tr>
                                         </tbody>
                                     </table>
