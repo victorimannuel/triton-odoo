@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_purchase_request_approve" model="mail.template">
+            <field name="name">Purchase Request: Approval Required</field>
+            <field name="model_id" ref="purchase_request.model_purchase_request"/>
+            <field name="subject">Approval required for Purchase Request {{ object.name }}</field>
+            <field name="email_from">{{ (object.requested_by.email_formatted or user.email_formatted) }}</field>
+            <field name="email_to">{{ object.assigned_to.email }}</field>
+            <field name="description">Email sent to approver when a purchase request needs approval</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Hello <t t-out="object.assigned_to.name or ''">Approver</t>,<br/><br/>
+        A Purchase Request has been submitted and requires your approval.
+        <br/><br/>
+        <strong>Reference:</strong> <t t-out="object.name or ''">PR001</t><br/>
+        <strong>Requested By:</strong> <t t-out="object.requested_by.name or ''">User</t><br/>
+        <t t-if="object.estimated_cost">
+            <strong>Estimated Cost:</strong> <t t-out="object.estimated_cost or ''">0.0</t> <t t-out="object.currency_id.symbol or ''">$</t><br/>
+        </t>
+        <br/>
+        Please review the request and approve or reject it.
+        <br/><br/>
+        <div style="margin: 16px 0px 16px 0px;">
+            <a t-att-href="object.get_base_url() + '/web#id=' + str(object.id) + '&amp;view_type=form&amp;model=purchase.request'"
+                style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                View Purchase Request
+            </a>
+        </div>
+        <br/><br/>
+        Thank you,<br/>
+        <t t-out="user.company_id.name or ''">Your Company</t>
+    </p>
+</div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>
