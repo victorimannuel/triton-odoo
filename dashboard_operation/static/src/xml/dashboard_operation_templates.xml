@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dashboard_operation.DashboardMain" owl="1">
+        <div class="o_dashboard_operation_root" tabindex="0" style="height:calc(100vh - 100px); max-height:calc(100vh - 100px); overflow-y:auto; overflow-x:hidden;">
+            <div class="o_dashboard_operation p-3">
+                <div t-if="state.data">
+                    
+                    <h2 class="mb-4 text-primary" style="font-weight: 700;">Task Operations</h2>
+                    
+                    <!-- EMPLOYEE METRICS (Visible to all) -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="card stat-card border-danger cursor-pointer" t-on-click="() => this.openTasks('overdue')">
+                                <div class="card-body bg-danger text-white rounded">
+                                    <h5 class="card-title text-uppercase font-weight-bold" style="color: #ffe4e6;">Overdue</h5>
+                                    <h2 class="card-text fw-bold"><t t-esc="state.data.metrics.overdue"/></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card border-warning cursor-pointer" t-on-click="() => this.openTasks('today')">
+                                <div class="card-body bg-warning text-dark rounded">
+                                    <h5 class="card-title text-uppercase font-weight-bold" style="color: #78350f;">Due Today</h5>
+                                    <h2 class="card-text fw-bold"><t t-esc="state.data.metrics.today"/></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card border-info cursor-pointer" t-on-click="() => this.openTasks('3days')">
+                                <div class="card-body bg-info text-white rounded">
+                                    <h5 class="card-title text-uppercase font-weight-bold" style="color: #e0f2fe;">Due in 3 Days</h5>
+                                    <h2 class="card-text fw-bold"><t t-esc="state.data.metrics.in_3_days"/></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card stat-card border-primary cursor-pointer" t-on-click="() => this.openTasks('7days')">
+                                <div class="card-body bg-primary text-white rounded">
+                                    <h5 class="card-title text-uppercase font-weight-bold" style="color: #dbeafe;">Due in 7 Days</h5>
+                                    <h2 class="card-text fw-bold"><t t-esc="state.data.metrics.in_7_days"/></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HELICOPTER VIEW FOR MANAGERS -->
+                    <div t-if="state.data.is_manager" class="manager-view">
+                        <h2 class="mb-3 text-secondary border-bottom pb-2">Helicopter View (BOD)</h2>
+                        <div class="row g-4">
+                            
+                            <!-- By Project -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header">Tasks by Project</div>
+                                    <div class="card-body p-0">
+                                        <ul class="list-group list-group-flush">
+                                            <t t-foreach="state.data.groupings.projects" t-as="project" t-key="project.name">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center cursor-pointer list-group-item-action" t-on-click="() => this.openGroupTasks(project.task_ids, ['stage_id'])">
+                                                    <t t-esc="project.name"/>
+                                                    <span class="badge bg-primary rounded-pill"><t t-esc="project.count"/></span>
+                                                </li>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- By Assignee -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header">Tasks by Assignee</div>
+                                    <div class="card-body p-0">
+                                        <ul class="list-group list-group-flush">
+                                            <t t-foreach="state.data.groupings.assignees" t-as="assignee" t-key="assignee.name">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center cursor-pointer list-group-item-action" t-on-click="() => this.openGroupTasks(assignee.task_ids)">
+                                                    <t t-esc="assignee.name"/>
+                                                    <span class="badge bg-secondary rounded-pill"><t t-esc="assignee.count"/></span>
+                                                </li>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- By State -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header">Tasks by State</div>
+                                    <div class="card-body p-0">
+                                        <ul class="list-group list-group-flush">
+                                            <t t-foreach="state.data.groupings.statuses" t-as="status" t-key="status.name">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center cursor-pointer list-group-item-action" t-on-click="() => this.openGroupTasks(status.task_ids)">
+                                                    <t t-esc="status.name"/>
+                                                    <span t-attf-class="badge #{status.color} rounded-pill"><t t-esc="status.count"/></span>
+                                                </li>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- EMPLOYEE PERSONAL ANALYTICS -->
+                    <div t-else="" class="employee-view mt-4">
+                        <div class="row g-4">
+                            <!-- Urgent Tasks List -->
+                            <div class="col-md-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header text-danger fw-bold">Urgent Action Required (Top 10)</div>
+                                    <div class="card-body p-0">
+                                        <div t-if="!state.data.urgent_tasks.length" class="p-3 text-success fw-bold text-center">
+                                            Awesome! You have no overdue or urgent tasks right now.
+                                        </div>
+                                        <table t-else="" class="table table-hover mb-0">
+                                            <tbody>
+                                                <t t-foreach="state.data.urgent_tasks" t-as="task" t-key="task.id">
+                                                    <tr t-on-click="() => this.openTask(task.id)" class="cursor-pointer table-hover-row">
+                                                        <td>
+                                                            <div class="fw-bold">
+                                                                <t t-if="task.priority_val > 0">
+                                                                    <t t-foreach="Array.from(Array(task.priority_val).keys())" t-as="i" t-key="i">
+                                                                        <i class="fa fa-star text-warning" title="Priority"></i>
+                                                                    </t>
+                                                                </t>
+                                                                <t t-else="">
+                                                                    <i class="fa fa-star-o text-muted" title="Normal Priority"></i>
+                                                                </t>
+                                                                <span class="ms-1"><t t-esc="task.name"/></span>
+                                                            </div>
+                                                            <small class="text-muted d-block"><t t-esc="task.project_name"/></small>
+                                                            <t t-if="task.has_subtasks">
+                                                                <div class="progress mt-1" style="height: 5px; background-color: #e9ecef;">
+                                                                    <div class="progress-bar bg-success" role="progressbar" t-attf-style="width: #{task.progress or 0}%;" t-att-aria-valuenow="task.progress or 0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                                <small t-if="task.progress > 0" class="text-muted" style="font-size: 0.7em;"><t t-esc="task.progress"/>%</small>
+                                                            </t>
+                                                        </td>
+                                                        <td class="text-end align-middle">
+                                                            <span class="badge bg-danger"><t t-esc="task.deadline"/></span>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- My Workload Breakdown -->
+                            <div class="col-md-6">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="card shadow-sm">
+                                            <div class="card-header bg-light">My Tasks by Project</div>
+                                            <div class="card-body p-0">
+                                                <ul class="list-group list-group-flush">
+                                                    <t t-foreach="state.data.groupings.projects" t-as="project" t-key="project.name">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center cursor-pointer list-group-item-action" t-on-click="() => this.openGroupTasks(project.task_ids, ['stage_id'])">
+                                                            <t t-esc="project.name"/>
+                                                            <span class="badge bg-primary rounded-pill"><t t-esc="project.count"/></span>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="card shadow-sm">
+                                            <div class="card-header bg-light">My Tasks by State</div>
+                                            <div class="card-body p-0">
+                                                <ul class="list-group list-group-flush">
+                                                    <t t-foreach="state.data.groupings.statuses" t-as="status" t-key="status.name">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center cursor-pointer list-group-item-action" t-on-click="() => this.openGroupTasks(status.task_ids)">
+                                                            <t t-esc="status.name"/>
+                                                            <span t-attf-class="badge #{status.color} rounded-pill"><t t-esc="status.count"/></span>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div t-else="" class="d-flex justify-content-center align-items-center h-100">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
