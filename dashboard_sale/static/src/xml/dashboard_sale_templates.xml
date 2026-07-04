@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dashboard_sale.DashboardMain" owl="1">
+        <div class="o_action o_dashboard_sale_root" tabindex="0" style="height:calc(100vh - 120px);max-height:calc(100vh - 120px);overflow-y:auto;overflow-x:hidden;">
+            <div class="o_dashboard_sale container-fluid py-4">
+                <div t-if="state.data">
+                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+                        <div>
+                            <h2 class="mb-1 fw-bold">Executive Sales Board</h2>
+                            <div class="text-muted">High-level sales performance and CRM pipeline overview.</div>
+                        </div>
+                    </div>
+
+                    <!-- Headline KPIs -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-3">
+                            <div class="card border-primary h-100 cursor-pointer" t-on-click="() => this.openSaleOrders([['state', 'in', ['sale', 'done']]])">
+                                <div class="card-body">
+                                    <div class="text-uppercase text-muted small fw-bold">Revenue (YTD)</div>
+                                    <div class="display-6 fw-bold text-primary"><t t-esc="formatCurrency(state.data.metrics.ytd_revenue)"/></div>
+                                    <div class="text-muted mt-2">
+                                        <i class="fa fa-calendar me-1"/> MTD: <t t-esc="formatCurrency(state.data.metrics.monthly_revenue)"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-success h-100 cursor-pointer" t-on-click="() => this.openLeads([['type', '=', 'opportunity']])">
+                                <div class="card-body">
+                                    <div class="text-uppercase text-muted small fw-bold">Win Rate</div>
+                                    <div class="display-6 fw-bold text-success"><t t-esc="state.data.metrics.win_rate"/>%</div>
+                                    <div class="text-muted mt-2">
+                                        <i class="fa fa-check-circle me-1"/> Won Deals: <t t-esc="state.data.metrics.won"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-warning h-100 cursor-pointer" t-on-click="() => this.openLeads([['type', '=', 'opportunity']])">
+                                <div class="card-body">
+                                    <div class="text-uppercase text-muted small fw-bold">Pipeline Value</div>
+                                    <div class="display-6 fw-bold text-warning"><t t-esc="formatCurrency(state.data.metrics.pipeline_total)"/></div>
+                                    <div class="text-muted mt-2">
+                                        <i class="fa fa-filter me-1"/> Open Leads: <t t-esc="state.data.metrics.pipeline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-info h-100 cursor-pointer" t-on-click="() => this.openSaleOrders([['state', 'in', ['sale', 'done']]])">
+                                <div class="card-body">
+                                    <div class="text-uppercase text-muted small fw-bold">Average Deal Size</div>
+                                    <div class="display-6 fw-bold text-info"><t t-esc="formatCurrency(state.data.metrics.average_deal_size)"/></div>
+                                    <div class="text-muted mt-2">
+                                        <i class="fa fa-shopping-cart me-1"/> Total Orders: <t t-esc="state.data.metrics.sales_orders"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-7" t-if="state.data.dailyBalanceChart">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header fw-bold bg-white">Revenue Trend (Last 6 Months)</div>
+                                <div class="card-body">
+                                    <div class="daily-chart-container">
+                                        <div class="daily-chart-bars">
+                                            <t t-foreach="state.data.dailyBalanceChart.chartBars" t-as="bar" t-key="bar.month">
+                                                <div class="daily-chart-bar-col" t-att-title="bar.month + ': ' + formatCurrency(bar.revenue)">
+                                                    <div class="daily-chart-bar" t-att-style="'height:' + Math.max(2, bar.heightPct) + '%; background-color: #2563eb;'"></div>
+                                                    <div class="text-center small text-muted mt-2" style="font-size: 0.7rem;"><t t-esc="bar.month.substring(0,3)"/></div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-5" t-if="state.data.revenueShareChart">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header fw-bold bg-white">Top 5 Products by Revenue</div>
+                                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                    <div class="revenue-share-container d-flex align-items-center w-100 gap-4">
+                                        <div class="position-relative">
+                                            <div class="revenue-share-donut" t-att-style="'background:' + state.data.revenueShareChart.donutStyle"></div>
+                                        </div>
+                                        <div class="revenue-share-legend flex-grow-1">
+                                            <div class="revenue-share-item mb-2 d-flex justify-content-between align-items-center" t-foreach="state.data.revenueShareChart.slices" t-as="slice" t-key="slice.id">
+                                                <div class="d-flex align-items-center gap-2 text-truncate" style="max-width: 150px;">
+                                                    <span class="color-swatch rounded-circle d-inline-block" t-att-style="'width:12px;height:12px;background:' + slice.color"></span>
+                                                    <span class="small fw-semibold text-truncate" t-att-title="slice.name"><t t-esc="slice.name"/></span>
+                                                </div>
+                                                <div class="small text-muted"><t t-esc="slice.pct.toFixed(1)"/>%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leaderboards Row -->
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header fw-bold bg-white">Top Salespersons (YTD)</div>
+                                <div class="card-body p-0">
+                                    <table class="table table-hover mb-0">
+                                        <tbody>
+                                            <t t-foreach="state.data.top_salespersons" t-as="salesman" t-key="salesman.user_id">
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <div class="fw-semibold"><t t-esc="salesman.user_name"/></div>
+                                                    </td>
+                                                    <td class="text-end align-middle fw-bold text-success">
+                                                        <t t-esc="formatCurrency(salesman.revenue)"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header fw-bold bg-white">Top Customers (YTD)</div>
+                                <div class="card-body p-0">
+                                    <table class="table table-hover mb-0">
+                                        <tbody>
+                                            <t t-foreach="state.data.top_customers" t-as="customer" t-key="customer.partner_id">
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <div class="fw-semibold text-truncate" style="max-width: 150px;" t-att-title="customer.partner_name"><t t-esc="customer.partner_name"/></div>
+                                                    </td>
+                                                    <td class="text-end align-middle fw-bold text-primary">
+                                                        <t t-esc="formatCurrency(customer.revenue)"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header fw-bold bg-white">Recent Top Opportunities</div>
+                                <div class="card-body p-0">
+                                    <table class="table table-hover mb-0">
+                                        <tbody>
+                                            <t t-foreach="state.data.top_leads" t-as="lead" t-key="lead.id">
+                                                <tr t-on-click="() => this.openLeads([['id', '=', lead.id]])" class="cursor-pointer">
+                                                    <td>
+                                                        <div class="fw-semibold text-truncate" style="max-width: 140px;" t-att-title="lead.name"><t t-esc="lead.name"/></div>
+                                                        <small class="text-muted"><t t-esc="lead.partner"/></small>
+                                                    </td>
+                                                    <td class="text-end align-middle">
+                                                        <div class="fw-bold"><t t-esc="formatCurrency(lead.amount)"/></div>
+                                                        <span class="badge bg-light text-dark"><t t-esc="lead.stage"/></span>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div t-else="" class="d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

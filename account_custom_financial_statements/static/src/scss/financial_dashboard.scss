@@ -1,0 +1,26 @@
+.financial-dashboard {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    
+    .card {
+        border-radius: 8px;
+        border: none;
+    }
+    
+    .table {
+        td, th {
+            padding: 12px;
+            vertical-align: middle;
+        }
+        
+        a {
+            color: #017e84;
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+                color: #01565a;
+            }
+        }
+    }
+}

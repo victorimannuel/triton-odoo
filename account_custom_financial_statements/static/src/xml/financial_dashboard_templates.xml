@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates xml:space="preserve">
+    <t t-name="account_custom_financial_statements.FinancialDashboard" owl="1">
+        <div class="o_action o_financial_dashboard_root" tabindex="0" style="height:calc(100vh - 120px);max-height:calc(100vh - 120px);overflow-y:auto;overflow-x:hidden;">
+            <div class="o_content">
+                <div t-if="state.loading" class="text-center mt-5">
+                    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" />
+                    <span class="sr-only">Loading...</span>
+                </div>
+                
+                <div t-if="!state.loading and state.data" class="financial-dashboard container-fluid py-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <t t-if="state.data.report_type == 'pl'">Profit and Loss</t>
+                                <t t-else="">Balance Sheet</t>
+                            </h2>
+                            <p class="text-muted">
+                                <strong>Company:</strong> <t t-esc="state.data.company_name" /><br/>
+                                <t t-if="state.data.report_type == 'pl'">
+                                    <strong>Period:</strong> <t t-esc="state.data.date_from" /> - <t t-esc="state.data.date_to" />
+                                </t>
+                                <t t-else="">
+                                    <strong>As of:</strong> <t t-esc="state.data.date_to" />
+                                </t>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <t t-if="state.data.report_type == 'pl'">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-0">
+                                <table class="table table-hover table-sm mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th class="text-end pe-4">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="state.data.data.sections" t-as="section" t-key="section.id">
+                                            <tr class="table-secondary fw-bold">
+                                                <td class="ps-3"><t t-esc="section.label" /></td>
+                                                <td class="text-end pe-4">
+                                                    <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
+                                                        <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                    </a>
+                                                    <span t-else="">
+                                                        <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <t t-if="section.lines">
+                                                <tr t-foreach="section.lines" t-as="line" t-key="line.id">
+                                                    <td class="ps-4">
+                                                        <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
+                                                    </td>
+                                                    <td class="text-end pe-4">
+                                                        <t t-esc="state.data.currency_symbol" /> <t t-esc="line.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </t>
+                                        
+                                        <tr class="table-light fw-bold border-top border-dark">
+                                            <td class="ps-3 text-success">Total Revenue</td>
+                                            <td class="text-end pe-4 text-success">
+                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_revenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                            </td>
+                                        </tr>
+                                        <tr class="table-light fw-bold">
+                                            <td class="ps-3 text-danger">Total Expense</td>
+                                            <td class="text-end pe-4 text-danger">
+                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_expense.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                            </td>
+                                        </tr>
+                                        <tr class="table-primary fw-bolder fs-5">
+                                            <td class="ps-3">Net Profit</td>
+                                            <td class="text-end pe-4">
+                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.net_profit.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                    
+                    <t t-else="">
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-light">
+                                        <h4 class="mb-0">Assets</h4>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <table class="table table-hover table-sm mb-0">
+                                            <tbody>
+                                                <t t-foreach="state.data.data.asset_sections" t-as="section" t-key="section.label">
+                                                    <tr class="table-secondary fw-bold">
+                                                        <td class="ps-3"><t t-esc="section.label" /></td>
+                                                        <td class="text-end pe-4">
+                                                            <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </a>
+                                                            <span t-else="">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-if="section.lines">
+                                                        <tr t-foreach="section.lines" t-as="line" t-key="line.id">
+                                                            <td class="ps-4">
+                                                                <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
+                                                            </td>
+                                                            <td class="text-end pe-4">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="line.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </t>
+                                                <tr class="table-primary fw-bolder fs-5 border-top border-dark">
+                                                    <td class="ps-3">Total Assets</td>
+                                                    <td class="text-end pe-4">
+                                                        <a style="cursor:pointer;" t-if="state.data.data.asset_sections_domain" t-on-click="() => this.openLines(state.data.data.asset_sections_domain)">
+                                                            <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_assets.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                        </a>
+                                                        <span t-else="">
+                                                            <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_assets.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6 mb-4">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-header bg-light">
+                                        <h4 class="mb-0">Liabilities</h4>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <table class="table table-hover table-sm mb-0">
+                                            <tbody>
+                                                <t t-foreach="state.data.data.liability_sections" t-as="section" t-key="section.label">
+                                                    <tr class="table-secondary fw-bold">
+                                                        <td class="ps-3"><t t-esc="section.label" /></td>
+                                                        <td class="text-end pe-4">
+                                                            <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </a>
+                                                            <span t-else="">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-if="section.lines">
+                                                        <tr t-foreach="section.lines" t-as="line" t-key="line.id">
+                                                            <td class="ps-4">
+                                                                <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
+                                                            </td>
+                                                            <td class="text-end pe-4">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="line.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </t>
+                                                <tr class="table-light fw-bold border-top border-dark">
+                                                    <td class="ps-3">Total Liabilities</td>
+                                                    <td class="text-end pe-4">
+                                                        <a style="cursor:pointer;" t-if="state.data.data.liability_sections_domain" t-on-click="() => this.openLines(state.data.data.liability_sections_domain)">
+                                                            <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_liabilities.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-light">
+                                        <h4 class="mb-0">Equity</h4>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <table class="table table-hover table-sm mb-0">
+                                            <tbody>
+                                                <t t-foreach="state.data.data.equity_sections" t-as="section" t-key="section.label">
+                                                    <tr class="table-secondary fw-bold">
+                                                        <td class="ps-3"><t t-esc="section.label" /></td>
+                                                        <td class="text-end pe-4">
+                                                            <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </a>
+                                                            <span t-else="">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-if="section.lines">
+                                                        <tr t-foreach="section.lines" t-as="line" t-key="line.id">
+                                                            <td class="ps-4">
+                                                                <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
+                                                            </td>
+                                                            <td class="text-end pe-4">
+                                                                <t t-esc="state.data.currency_symbol" /> <t t-esc="line.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </t>
+                                                <tr class="table-light fw-bold border-top border-dark">
+                                                    <td class="ps-3">Total Equity</td>
+                                                    <td class="text-end pe-4">
+                                                        <a style="cursor:pointer;" t-if="state.data.data.equity_sections_domain" t-on-click="() => this.openLines(state.data.data.equity_sections_domain)">
+                                                            <t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_equity.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="card-footer bg-primary text-white mt-3">
+                                        <div class="d-flex justify-content-between fs-5 fw-bold">
+                                            <span>Total Liabilities + Equity</span>
+                                            <span><t t-esc="state.data.currency_symbol" /> <t t-esc="state.data.data.total_liabilities_equity.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" /></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,3 +1,6 @@
+import json
+from urllib.parse import quote
+
 from odoo import api, models
 from odoo.tools import date_utils
 
@@ -13,9 +16,9 @@ class FinancialStatementService(models.AbstractModel):
             ("display_type", "not in", ["line_note", "line_section"]),
         ]
         if date_from:
-            domain.append(("date", ">=", date_from))
+            domain.append(("date", ">=", str(date_from)))
         if date_to:
-            domain.append(("date", "<=", date_to))
+            domain.append(("date", "<=", str(date_to)))
         if target_move == "posted":
             domain.append(("move_id.state", "=", "posted"))
         else:
@@ -25,6 +28,26 @@ class FinancialStatementService(models.AbstractModel):
     @api.model
     def _amount_abs_credit_nature(self, amount):
         return -amount
+
+    @api.model
+    def _web_action_url(self, domain):
+        try:
+            action_id = self.env.ref('account.action_account_moves_all_a').id
+        except ValueError:
+            action_id = ''
+        return "/web#action=%s&model=account.move.line&view_type=list&domain=%s" % (
+            action_id,
+            quote(json.dumps(domain))
+        )
+
+    @api.model
+    def _drilldown_url(self, company_id, target_move, date_from=False, date_to=False, account_types=None):
+        domain = self._base_domain(
+            company_id, target_move, date_from=date_from, date_to=date_to
+        )
+        if account_types:
+            domain.append(("account_id.account_type", "in", account_types))
+        return self._web_action_url(domain)
 
     @api.model
     def _sum_by_types(self, company_id, target_move, date_from, date_to, account_types):
@@ -70,12 +93,25 @@ class FinancialStatementService(models.AbstractModel):
             amount = row.get("balance", 0.0)
             if account.account_type in {"income", "income_other"}:
                 amount = self._amount_abs_credit_nature(amount)
+            line_domain = [
+                ("account_id", "=", account.id),
+                ("account_id.account_type", "=", account.account_type),
+            ]
+            url = self._web_action_url(
+                self._base_domain(
+                    company_id, target_move, date_from=date_from, date_to=date_to
+                )
+                + line_domain
+            )
             details[account.account_type].append(
                 {
+                    "id": account.id,
                     "code": account.code,
                     "name": account.name,
                     "label": f"{account.code} - {account.name}",
                     "amount": amount,
+                    "url": url,
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_from=date_from, date_to=date_to) + line_domain),
                 }
             )
         for key in details:
@@ -221,40 +257,77 @@ class FinancialStatementService(models.AbstractModel):
         )
         total_equity = equity_total + current_year_earnings
         liab_equity_total = liabilities_total + total_equity
-
+        asset_url = self._drilldown_url(
+            company_id=company_id,
+            target_move=target_move,
+            date_from=False,
+            date_to=date_to,
+            account_types=asset_types,
+        )
+        liability_url = self._drilldown_url(
+            company_id=company_id,
+            target_move=target_move,
+            date_from=False,
+            date_to=date_to,
+            account_types=liability_types,
+        )
+        equity_url = self._drilldown_url(
+            company_id=company_id,
+            target_move=target_move,
+            date_from=False,
+            date_to=date_to,
+            account_types=equity_types,
+        )
+        asset_domain = self._base_domain(company_id, target_move, date_from=False, date_to=date_to) + [("account_id.account_type", "in", asset_types)]
+        liability_domain = self._base_domain(company_id, target_move, date_from=False, date_to=date_to) + [("account_id.account_type", "in", liability_types)]
+        equity_domain = self._base_domain(company_id, target_move, date_from=False, date_to=date_to) + [("account_id.account_type", "in", equity_types)]
         return {
             "asset_sections": [
                 {
                     "label": "Receivables",
                     "amount": raw_assets.get("asset_receivable", 0.0),
                     "lines": asset_details.get("asset_receivable", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["asset_receivable"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["asset_receivable"])]),
                 },
                 {
                     "label": "Cash and Bank",
                     "amount": raw_assets.get("asset_cash", 0.0),
                     "lines": asset_details.get("asset_cash", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["asset_cash"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["asset_cash"])]),
                 },
                 {
                     "label": "Current Assets",
                     "amount": raw_assets.get("asset_current", 0.0),
                     "lines": asset_details.get("asset_current", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["asset_current"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["asset_current"])]),
                 },
                 {
                     "label": "Prepayments",
                     "amount": raw_assets.get("asset_prepayments", 0.0),
                     "lines": asset_details.get("asset_prepayments", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["asset_prepayments"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["asset_prepayments"])]),
                 },
                 {
                     "label": "Fixed Assets",
                     "amount": raw_assets.get("asset_fixed", 0.0),
                     "lines": asset_details.get("asset_fixed", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["asset_fixed"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["asset_fixed"])]),
                 },
                 {
                     "label": "Non-current Assets",
                     "amount": raw_assets.get("asset_non_current", 0.0),
                     "lines": asset_details.get("asset_non_current", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["asset_non_current"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["asset_non_current"])]),
                 },
             ],
+            "asset_sections_url": asset_url,
+            "asset_sections_domain": json.dumps(asset_domain),
             "liability_sections": [
                 {
                     "label": "Payables",
@@ -262,6 +335,8 @@ class FinancialStatementService(models.AbstractModel):
                         raw_liabilities.get("liability_payable", 0.0)
                     ),
                     "lines": liability_details.get("liability_payable", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["liability_payable"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["liability_payable"])]),
                 },
                 {
                     "label": "Credit Cards",
@@ -269,6 +344,8 @@ class FinancialStatementService(models.AbstractModel):
                         raw_liabilities.get("liability_credit_card", 0.0)
                     ),
                     "lines": liability_details.get("liability_credit_card", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["liability_credit_card"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["liability_credit_card"])]),
                 },
                 {
                     "label": "Current Liabilities",
@@ -276,6 +353,8 @@ class FinancialStatementService(models.AbstractModel):
                         raw_liabilities.get("liability_current", 0.0)
                     ),
                     "lines": liability_details.get("liability_current", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["liability_current"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["liability_current"])]),
                 },
                 {
                     "label": "Non-current Liabilities",
@@ -283,13 +362,19 @@ class FinancialStatementService(models.AbstractModel):
                         raw_liabilities.get("liability_non_current", 0.0)
                     ),
                     "lines": liability_details.get("liability_non_current", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["liability_non_current"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["liability_non_current"])]),
                 },
             ],
+            "liability_sections_url": liability_url,
+            "liability_sections_domain": json.dumps(liability_domain),
             "equity_sections": [
                 {
                     "label": "Equity",
                     "amount": self._amount_abs_credit_nature(raw_equity.get("equity", 0.0)),
                     "lines": equity_details.get("equity", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["equity"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["equity"])]),
                 },
                 {
                     "label": "Unallocated Earnings",
@@ -297,13 +382,19 @@ class FinancialStatementService(models.AbstractModel):
                         raw_equity.get("equity_unaffected", 0.0)
                     ),
                     "lines": equity_details.get("equity_unaffected", []),
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["equity_unaffected"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["equity_unaffected"])]),
                 },
                 {
                     "label": "Current Year Earnings",
                     "amount": current_year_earnings,
                     "lines": [],
+                    "url": self._drilldown_url(company_id, target_move, date_to=date_to, account_types=["income", "income_other", "expense", "expense_depreciation", "expense_direct_cost"]),
+                    "domain": json.dumps(self._base_domain(company_id, target_move, date_to=date_to) + [("account_id.account_type", "in", ["income", "income_other", "expense", "expense_depreciation", "expense_direct_cost"])]),
                 },
             ],
+            "equity_sections_url": equity_url,
+            "equity_sections_domain": json.dumps(equity_domain),
             "total_assets": assets_total,
             "total_liabilities": liabilities_total,
             "total_equity": total_equity,

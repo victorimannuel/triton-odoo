@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class FinancialStatementWizard(models.TransientModel):
@@ -38,3 +38,44 @@ class FinancialStatementWizard(models.TransientModel):
             else "account_custom_financial_statements.report_balance_sheet_pdf"
         )
         return self.env.ref(report_name).report_action(self)
+
+    def action_view_dashboard(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.client",
+            "tag": "account_custom_financial_statements.dashboard",
+            "name": "Interactive Dashboard",
+            "params": {
+                "wizard_id": self.id,
+            },
+        }
+
+    @api.model
+    def get_dashboard_data(self, wizard_id):
+        docs = self.browse(wizard_id)
+        docs.ensure_one()
+        service = self.env["custom.financial.statement.service"]
+        
+        if docs.report_type == "pl":
+            payload = service.get_profit_and_loss(
+                company_id=docs.company_id.id,
+                date_from=docs.date_from,
+                date_to=docs.date_to,
+                target_move=docs.target_move,
+            )
+        else:
+            payload = service.get_balance_sheet(
+                company_id=docs.company_id.id,
+                date_to=docs.date_to,
+                target_move=docs.target_move,
+            )
+            
+        return {
+            "report_type": docs.report_type,
+            "company_name": docs.company_id.display_name,
+            "date_from": str(docs.date_from) if docs.date_from else "",
+            "date_to": str(docs.date_to) if docs.date_to else "",
+            "currency_symbol": docs.company_id.currency_id.symbol,
+            "currency_position": docs.company_id.currency_id.position,
+            "data": payload,
+        }

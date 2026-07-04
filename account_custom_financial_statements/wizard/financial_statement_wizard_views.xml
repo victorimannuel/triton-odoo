@@ -20,10 +20,16 @@
                 </group>
                 <footer>
                     <button
-                        name="action_print_html"
+                        string="View Interactive Dashboard"
                         type="object"
-                        string="View"
-                        class="oe_highlight"
+                        name="action_view_dashboard"
+                        class="btn-primary"
+                    />
+                    <button
+                        string="Print HTML"
+                        type="object"
+                        name="action_print_html"
+                        class="btn-secondary"
                     />
                     <button
                         name="action_print_pdf"

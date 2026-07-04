@@ -1,0 +1,74 @@
+.o_dashboard_sale_root {
+    min-height: calc(100vh - 100px);
+    background:
+        radial-gradient(circle at top left, rgba(13, 110, 253, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(25, 135, 84, 0.08), transparent 25%),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.o_dashboard_sale .card {
+    border-radius: 1rem;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.o_dashboard_sale .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.75rem 2rem rgba(15, 23, 42, 0.08);
+}
+
+.o_dashboard_sale .cursor-pointer {
+    cursor: pointer;
+}
+
+.daily-chart-container {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.daily-chart-bars {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 100%;
+}
+
+.daily-chart-bar-col {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.daily-chart-bar {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease-out;
+}
+
+.daily-chart-bar:hover {
+    opacity: 0.8;
+}
+
+.revenue-share-donut {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.revenue-share-donut::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
