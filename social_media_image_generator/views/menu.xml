@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_socmed_image_root"
+              name="Image Generator"
+              sequence="90"
+              groups="base.group_user"/>
+
+    <menuitem id="menu_socmed_image_generate"
+              name="Generate Image"
+              parent="menu_socmed_image_root"
+              action="action_socmed_image_wizard"
+              sequence="10"/>
+
+</odoo>
