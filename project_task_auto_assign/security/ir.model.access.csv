@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_assignment_rule_manager,task.assignment.rule.manager,model_task_assignment_rule,project.group_project_manager,1,1,1,1
+access_task_assignment_rule_user,task.assignment.rule.user,model_task_assignment_rule,project.group_project_user,1,0,0,0
+access_task_assignment_log_manager,task.assignment.log.manager,model_task_assignment_log,project.group_project_manager,1,0,0,0
+access_task_assignment_log_user,task.assignment.log.user,model_task_assignment_log,project.group_project_user,1,0,0,0

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_assignment_rule_form" model="ir.ui.view">
+        <field name="name">task.assignment.rule.form</field>
+        <field name="model">task.assignment.rule</field>
+        <field name="arch" type="xml">
+            <form string="Assignment Rule">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Rule name ..."/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="active"/>
+                                <field name="priority"/>
+                            </group>
+                        </group>
+                    </div>
+                    <notebook>
+                        <page string="Conditions">
+                            <group>
+                                <group string="Scope">
+                                    <field name="project_ids"
+                                           widget="many2many_tags"
+                                           placeholder="All projects"/>
+                                    <field name="stage_id"
+                                           placeholder="Any stage"/>
+                                    <field name="tag_id"
+                                           placeholder="Any tag"/>
+                                </group>
+                                <group string="Trigger">
+                                    <field name="apply_on_create"/>
+                                    <field name="apply_on_stage_change"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Strategy">
+                            <group>
+                                <field name="strategy"/>
+                                <field name="specific_user_id"
+                                       attrs="{'invisible': [('strategy', '!=', 'specific_user')], 'required': [('strategy', '=', 'specific_user')]}"/>
+                                <field name="user_pool_ids"
+                                       widget="many2many_tags"
+                                       attrs="{'invisible': [('strategy', 'not in', ('round_robin', 'least_loaded'))], 'required': [('strategy', 'in', ('round_robin', 'least_loaded'))]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_task_assignment_rule_tree" model="ir.ui.view">
+        <field name="name">task.assignment.rule.tree</field>
+        <field name="model">task.assignment.rule</field>
+        <field name="arch" type="xml">
+            <tree string="Assignment Rules" default_order="priority ASC">
+                <field name="name"/>
+                <field name="active"/>
+                <field name="priority"/>
+                <field name="strategy"/>
+                <field name="apply_on_create"/>
+                <field name="apply_on_stage_change"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_task_assignment_rule_search" model="ir.ui.view">
+        <field name="name">task.assignment.rule.search</field>
+        <field name="model">task.assignment.rule</field>
+        <field name="arch" type="xml">
+            <search string="Assignment Rules">
+                <field name="name"/>
+                <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="apply_on_create" string="On Create" domain="[('apply_on_create', '=', True)]"/>
+                <filter name="apply_on_stage_change" string="On Stage Change" domain="[('apply_on_stage_change', '=', True)]"/>
+                <separator/>
+                <filter name="strategy_specific" string="Specific User" domain="[('strategy', '=', 'specific_user')]"/>
+                <filter name="strategy_round_robin" string="Round Robin" domain="[('strategy', '=', 'round_robin')]"/>
+                <filter name="strategy_least_loaded" string="Least Loaded" domain="[('strategy', '=', 'least_loaded')]"/>
+                <filter name="strategy_team_lead" string="Team Lead" domain="[('strategy', '=', 'team_lead')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_strategy" string="Strategy" context="{'group_by': 'strategy'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_task_assignment_rule" model="ir.actions.act_window">
+        <field name="name">Assignment Rules</field>
+        <field name="res_model">task.assignment.rule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first assignment rule
+            </p>
+            <p>
+                Define rules to automatically assign tasks to users based
+                on project, stage, tags, and configurable strategies.
+            </p>
+        </field>
+    </record>
+</odoo>

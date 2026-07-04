@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Project > Configuration > Assignment Rules -->
+    <menuitem id="menu_project_config_assign_rules"
+              name="Assignment Rules"
+              parent="project.menu_project_config"
+              action="action_task_assignment_rule"
+              sequence="30"
+              groups="project.group_project_manager"/>
+
+    <!-- Project > Reporting > Assignment Log -->
+    <menuitem id="menu_project_report_assign_log"
+              name="Assignment Log"
+              parent="project.menu_project_reporting"
+              action="action_task_assignment_log"
+              sequence="50"
+              groups="project.group_project_user"/>
+</odoo>
