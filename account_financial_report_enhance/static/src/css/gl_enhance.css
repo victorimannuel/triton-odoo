@@ -1,0 +1,17 @@
+/* Toggle icon for collapsible account sections */
+.act_as_caption.account_title .gl-toggle-icon {
+    margin-right: 6px;
+    font-size: 0.8em;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+/* Rotate icon when section is collapsed (checkbox not checked) */
+.gl-toggle-checkbox:not(:checked) + label .gl-toggle-icon {
+    transform: rotate(-90deg);
+}
+
+/* Hide the contents when collapsed */
+.gl-toggle-checkbox:not(:checked) ~ .gl-collapse-wrapper {
+    display: none;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_mark_delete" model="ir.ui.view">
+        <field name="name">product.template.form.mark.delete</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']" position="inside">
+                <span class="d-inline-block">
+                    <field name="to_be_deleted"/>
+                    <label for="to_be_deleted"/>
+                </span>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_search_view_mark_delete" model="ir.ui.view">
+        <field name="name">product.template.search.mark.delete</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_to_sell']" position="after">
+                <filter string="To Be Deleted" name="filter_to_be_deleted" domain="[('to_be_deleted', '=', True)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_tree_view_mark_delete" model="ir.ui.view">
+        <field name="name">product.template.list.mark.delete</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='qty_available']" position="after">
+                <field name="to_be_deleted" optional="show" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_kanban_view_mark_delete" model="ir.ui.view">
+        <field name="name">product.template.kanban.mark.delete</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="inside">
+                <field name="to_be_deleted"/>
+            </xpath>
+            <xpath expr="//field[@name='product_properties']" position="before">
+                <div class="mt-1 d-flex align-items-center">
+                    <field name="to_be_deleted" widget="boolean_toggle"/>
+                    <span class="ms-2 text-danger fw-bold" t-if="record.to_be_deleted.raw_value">
+                        To Be Deleted
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

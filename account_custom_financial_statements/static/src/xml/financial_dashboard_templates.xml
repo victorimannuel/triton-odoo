@@ -40,7 +40,7 @@
                                     <tbody>
                                         <t t-foreach="state.data.data.sections" t-as="section" t-key="section.id">
                                             <tr class="table-secondary fw-bold">
-                                                <td class="ps-3"><t t-esc="section.label" /></td>
+                                                <td class="ps-3"><button type="button" class="btn btn-sm btn-link p-0 me-2" t-on-click="() => this.toggleSection(section.label)" t-att-title="this.isExpanded(section.label) ? 'Collapse' : 'Expand'"><i t-att-class="this.isExpanded(section.label) ? 'fa fa-caret-down' : 'fa fa-caret-right'"/></button><t t-esc="section.label" /></td>
                                                 <td class="text-end pe-4">
                                                     <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
                                                         <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
@@ -50,7 +50,7 @@
                                                     </span>
                                                 </td>
                                             </tr>
-                                            <t t-if="section.lines">
+                                            <t t-if="section.lines and this.isExpanded(section.label)">
                                                 <tr t-foreach="section.lines" t-as="line" t-key="line.id">
                                                     <td class="ps-4">
                                                         <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
@@ -98,7 +98,7 @@
                                             <tbody>
                                                 <t t-foreach="state.data.data.asset_sections" t-as="section" t-key="section.label">
                                                     <tr class="table-secondary fw-bold">
-                                                        <td class="ps-3"><t t-esc="section.label" /></td>
+                                                        <td class="ps-3"><button type="button" class="btn btn-sm btn-link p-0 me-2" t-on-click="() => this.toggleSection(section.label)" t-att-title="this.isExpanded(section.label) ? 'Collapse' : 'Expand'"><i t-att-class="this.isExpanded(section.label) ? 'fa fa-caret-down' : 'fa fa-caret-right'"/></button><t t-esc="section.label" /></td>
                                                         <td class="text-end pe-4">
                                                             <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
                                                                 <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
@@ -108,7 +108,7 @@
                                                             </span>
                                                         </td>
                                                     </tr>
-                                                    <t t-if="section.lines">
+                                                    <t t-if="section.lines and this.isExpanded(section.label)">
                                                         <tr t-foreach="section.lines" t-as="line" t-key="line.id">
                                                             <td class="ps-4">
                                                                 <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
@@ -146,7 +146,7 @@
                                             <tbody>
                                                 <t t-foreach="state.data.data.liability_sections" t-as="section" t-key="section.label">
                                                     <tr class="table-secondary fw-bold">
-                                                        <td class="ps-3"><t t-esc="section.label" /></td>
+                                                        <td class="ps-3"><button type="button" class="btn btn-sm btn-link p-0 me-2" t-on-click="() => this.toggleSection(section.label)" t-att-title="this.isExpanded(section.label) ? 'Collapse' : 'Expand'"><i t-att-class="this.isExpanded(section.label) ? 'fa fa-caret-down' : 'fa fa-caret-right'"/></button><t t-esc="section.label" /></td>
                                                         <td class="text-end pe-4">
                                                             <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
                                                                 <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
@@ -156,7 +156,7 @@
                                                             </span>
                                                         </td>
                                                     </tr>
-                                                    <t t-if="section.lines">
+                                                    <t t-if="section.lines and this.isExpanded(section.label)">
                                                         <tr t-foreach="section.lines" t-as="line" t-key="line.id">
                                                             <td class="ps-4">
                                                                 <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>
@@ -189,7 +189,7 @@
                                             <tbody>
                                                 <t t-foreach="state.data.data.equity_sections" t-as="section" t-key="section.label">
                                                     <tr class="table-secondary fw-bold">
-                                                        <td class="ps-3"><t t-esc="section.label" /></td>
+                                                        <td class="ps-3"><button type="button" class="btn btn-sm btn-link p-0 me-2" t-on-click="() => this.toggleSection(section.label)" t-att-title="this.isExpanded(section.label) ? 'Collapse' : 'Expand'"><i t-att-class="this.isExpanded(section.label) ? 'fa fa-caret-down' : 'fa fa-caret-right'"/></button><t t-esc="section.label" /></td>
                                                         <td class="text-end pe-4">
                                                             <a style="cursor:pointer;" t-if="section.domain" t-on-click="() => this.openLines(section.domain)">
                                                                 <t t-esc="state.data.currency_symbol" /> <t t-esc="section.amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})" />
@@ -199,7 +199,7 @@
                                                             </span>
                                                         </td>
                                                     </tr>
-                                                    <t t-if="section.lines">
+                                                    <t t-if="section.lines and this.isExpanded(section.label)">
                                                         <tr t-foreach="section.lines" t-as="line" t-key="line.id">
                                                             <td class="ps-4">
                                                                 <a style="cursor:pointer;" t-on-click="() => this.openLines(line.domain)"><t t-esc="line.label" /></a>

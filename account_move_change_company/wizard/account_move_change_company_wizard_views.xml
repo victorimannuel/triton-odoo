@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_move_change_company_wizard_form" model="ir.ui.view">
+            <field name="name">account.move.change.company.wizard.form</field>
+            <field name="model">account.move.change.company.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Transfer to Another Company">
+                    <sheet>
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Migration tool.</strong> This transfers records directly using
+                            elevated access regardless of their state. Accounts are remapped by
+                            code, taxes by name, journals by type. Make sure the destination
+                            company has a matching chart of accounts before proceeding.
+                        </div>
+                        <group>
+                            <group string="Company Transfer">
+                                <field name="current_company_id" readonly="1"/>
+                                <field name="destination_company_id"/>
+                            </group>
+                            <group string="Records Affected">
+                                <field name="invoice_count" string="Invoices / Entries" readonly="1"/>
+                                <field name="payment_count" string="Linked Payments" readonly="1"/>
+                                <field name="line_count" string="Journal Lines" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_transfer"
+                                string="Confirm Transfer"
+                                type="object"
+                                class="btn-primary"
+                                confirm="Transfer all listed records (invoices, entries, payments and their lines) to the selected company? This cannot be undone."/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Server action bound to account.move list view -->
+        <record id="action_account_move_change_company" model="ir.actions.server">
+            <field name="name">Transfer to Another Company</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'name': 'Transfer to Another Company',
+    'res_model': 'account.move.change.company.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+    'context': {'active_ids': records.ids},
+}
+            </field>
+        </record>
+    </data>
+</odoo>

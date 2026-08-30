@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="account_dynamic_reports.balance_sheet">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-set="periods" t-value="data.get('year') or []"/>
+                <t t-set="rows" t-value="data.get('export_rows') or []"/>
+                <div class="page o_tkg_balance_sheet_pdf">
+                    <style>
+                        .o_tkg_balance_sheet_pdf {
+                            color: #1f2937;
+                            font-family: Arial, sans-serif;
+                            font-size: 10px;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-report {
+                            width: 100%;
+                            border-collapse: collapse;
+                            table-layout: fixed;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-company {
+                            color: #d0d3d8;
+                            font-size: 10px;
+                            font-weight: 700;
+                            padding: 0 0 12px 0;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-period-box {
+                            border: 1px solid #d7dbe0;
+                            padding: 6px 10px;
+                            font-weight: 700;
+                            text-align: center;
+                            white-space: nowrap;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-period-label {
+                            padding-top: 6px;
+                            font-weight: 700;
+                            text-align: right;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-row td {
+                            border-bottom: 1px solid #d9dde3;
+                            padding: 5px 8px;
+                            vertical-align: middle;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-label {
+                            width: 62%;
+                            color: #172b4d;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-amount {
+                            text-align: right;
+                            white-space: nowrap;
+                            font-variant-numeric: tabular-nums;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-section td,
+                        .o_tkg_balance_sheet_pdf .bs-section_total td {
+                            background: #d6d8db;
+                            border-bottom: 0;
+                            font-weight: 700;
+                            padding-top: 6px;
+                            padding-bottom: 6px;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-section:not(:first-child) td {
+                            border-top: 14px solid #ffffff;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-subsection td,
+                        .o_tkg_balance_sheet_pdf .bs-total td,
+                        .o_tkg_balance_sheet_pdf .bs-group_total td,
+                        .o_tkg_balance_sheet_pdf .bs-grand_total td {
+                            font-weight: 700;
+                        }
+                        .o_tkg_balance_sheet_pdf .bs-grand_total td {
+                            border-bottom: 1px solid #c5cad2;
+                        }
+                        .o_tkg_balance_sheet_pdf .level-0 { padding-left: 28px; }
+                        .o_tkg_balance_sheet_pdf .level-1 { padding-left: 42px; }
+                        .o_tkg_balance_sheet_pdf .level-2 { padding-left: 58px; }
+                        .o_tkg_balance_sheet_pdf .level-3 { padding-left: 76px; color: #344054; }
+                        .o_tkg_balance_sheet_pdf .o_tkg_bs_amount_negative { color: #c0392b; }
+                        .o_tkg_balance_sheet_pdf .o_tkg_bs_amount_zero { color: #c9d0d8; }
+                    </style>
+                    <table class="bs-report">
+                        <thead>
+                            <tr>
+                                <th class="bs-company" t-att-colspan="1 + len(periods)">
+                                    <t t-esc="data.get('companyName') or ''"/>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th/>
+                                <t t-foreach="periods" t-as="period" t-key="period_index">
+                                    <th class="bs-period-box"><t t-esc="period"/></th>
+                                </t>
+                            </tr>
+                            <tr>
+                                <th/>
+                                <t t-foreach="periods" t-as="period" t-key="period_index">
+                                    <th class="bs-period-label">Balance</th>
+                                </t>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="rows">
+                                <t t-foreach="rows" t-as="row" t-key="row_index">
+                                    <t t-set="amount_classes" t-value="row.get('amount_classes') or []"/>
+                                    <tr t-attf-class="bs-row bs-#{row.get('type', 'line')}">
+                                        <td t-attf-class="bs-label level-#{row.get('level', 0)}">
+                                            <t t-esc="row.get('label')"/>
+                                        </td>
+                                        <t t-foreach="row.get('values') or []" t-as="amount" t-key="amount_index">
+                                            <td t-att-class="'bs-amount ' + ((amount_classes[amount_index] if amount_index &lt; len(amount_classes) else '') or '')">
+                                                <t t-esc="amount"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <tr class="bs-row">
+                                    <td t-att-colspan="1 + len(periods)">No Balance Sheet data available.</td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

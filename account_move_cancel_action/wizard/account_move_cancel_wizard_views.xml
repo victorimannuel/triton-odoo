@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_move_cancel_wizard_form" model="ir.ui.view">
+            <field name="name">account.move.cancel.wizard.form</field>
+            <field name="model">account.move.cancel.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Entries">
+                    <sheet>
+                        <div class="alert alert-danger" role="alert" invisible="action_type != 'delete'">
+                            <strong>Warning:</strong> You are about to permanently <b>cancel and delete</b> the selected journal entries. This action cannot be undone.
+                        </div>
+                        <div class="alert alert-warning" role="alert" invisible="action_type == 'delete'">
+                            <strong>Warning:</strong> You are about to <b>cancel</b> the selected journal entries.
+                        </div>
+                        <group>
+                            <field name="action_type" invisible="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Discard" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_account_move_cancel_entries" model="ir.actions.act_window">
+            <field name="name">Cancel Entries</field>
+            <field name="res_model">account.move.cancel.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'default_action_type': 'cancel'}</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_view_types">list</field>
+        </record>
+
+        <record id="action_account_move_cancel_delete_entries" model="ir.actions.act_window">
+            <field name="name">Cancel and Delete Entries</field>
+            <field name="res_model">account.move.cancel.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'default_action_type': 'delete'}</field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_view_types">list</field>
+        </record>
+    </data>
+</odoo>

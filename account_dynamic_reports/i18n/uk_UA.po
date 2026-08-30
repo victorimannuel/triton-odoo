@@ -1,0 +1,2312 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_dynamic_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-28 11:11+0000\n"
+"PO-Revision-Date: 2023-11-28 11:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+msgid "1-30"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+msgid "31-60"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+msgid "61-90"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+msgid "91-120"
+msgstr ""
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"fw-bolder ms-1\">\n"
+"                                    Expenses\n"
+"                                </span>"
+msgstr "Витрати"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"fw-bolder ms-2\">\n"
+"                                    Income\n"
+"                                </span>"
+msgstr "Дохід"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"fw-bolder ms-2\">\n"
+"                                    Total Income\n"
+"                                </span>"
+msgstr "Загальний дохід"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"fw-bolder ms-2\">Total Expenses\n"
+"                                    </span>"
+msgstr "Загальні витрати"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"fw-bolder ms-3\">\n"
+"                                    Gross Profit\n"
+"                                </span>"
+msgstr "Загальний прибуток"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"fw-bolder\">\n"
+"                                    Net Profit\n"
+"                                </span>"
+msgstr "Чистий дохід"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"ms-3\">Cost of\n"
+"                                    Revenue\n"
+"                                </span>"
+msgstr "Вартість доходу"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"ms-3\">Depreciation\n"
+"                                    </span>"
+msgstr "Амортизація"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid "<span class=\"ms-3\">Expenses</span>"
+msgstr "Витрати"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid "<span class=\"ms-3\">Operating Income</span>"
+msgstr "Операційний дохід"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid ""
+"<span class=\"ms-3\">Other Income\n"
+"                                </span>"
+msgstr "Інші прибутки"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+msgid "<span style=\"font-weight: 700;\">Purchase</span>"
+msgstr "Купівля"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+msgid "<span style=\"font-weight: 700;\">Sales</span>"
+msgstr "Продажі"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 2%;\">\n"
+"                                        ASSETS\n"
+"                                    </span>"
+msgstr "АКТИВИ"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 2%;\">\n"
+"                                        EQUITY\n"
+"                                    </span>"
+msgstr "ВЛАСНИЙ КАПІТАЛ"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 2%;\">\n"
+"                                        LIABILITIES\n"
+"                                    </span>"
+msgstr "ЗОБОВ'ЯЗАННЯ"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Current Assets\n"
+"                                    </span>"
+msgstr "Оборотні активи"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Current Liabilities\n"
+"                                    </span>"
+msgstr "Поточні зобов'язання"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        LIABILITIES + EQUITY\n"
+"                                    </span>"
+msgstr "ЗОБОВ'ЯЗАННЯ + ВЛАСНИЙ КАПІТАЛ"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Total Assets\n"
+"                                    </span>"
+msgstr "Сукупні активи"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Total Current Assets\n"
+"                                    </span>"
+msgstr "Загальні оборотні активи"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Total Current Liabilities\n"
+"                                    </span>"
+msgstr "Загальна сума поточних зобов'язань"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Total EQUITY\n"
+"                                    </span>"
+msgstr "Сукупний капітал"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Total LIABILITIES\n"
+"                                    </span>"
+msgstr "Всього ЗОБОВ'ЯЗАНЬ"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Total Unallocated Earnings\n"
+"                                    </span>"
+msgstr "Загальний нерозподілений прибуток"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"font-weight: bolder; margin-left: 4%;\">\n"
+"                                        Unallocated Earnings\n"
+"                                    </span>"
+msgstr "Нерозподілені прибутки"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Bank and Cash Accounts\n"
+"                                    </span>"
+msgstr "Банківські та касові рахунки"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Current Allocated Earnings\n"
+"                                    </span>"
+msgstr "Поточний розподілений прибуток"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Current Assets\n"
+"                                    </span>"
+msgstr "Оборотні активи"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Current Earnings\n"
+"                                    </span>"
+msgstr "Поточний прибуток"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Current Liabilities\n"
+"                                    </span>"
+msgstr "Поточні зобов'язання"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Payables\n"
+"                                    </span>"
+msgstr "Кредиторська заборгованість"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Plus Fixed Assets\n"
+"                                    </span>"
+msgstr "Plus Fixed Assets"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Plus Non-current Assets\n"
+"                                    </span>"
+msgstr "Плюс необоротні активи"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Plus Non-current Liabilities\n"
+"                                    </span>"
+msgstr "Плюс довгострокові зобов'язання"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Prepayments\n"
+"                                    </span>"
+msgstr "Передоплати"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Receivables\n"
+"                                    </span>"
+msgstr "Дебіторська заборгованість"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+msgid ""
+"<span style=\"margin-left: 6%;\">Retained Earnings\n"
+"                                    </span>"
+msgstr "Нерозподілений прибуток"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+msgid ""
+"<span>Unknown\n"
+"                                                            Account\n"
+"                                                        </span>"
+msgstr "Невідомий обліковий запис"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+msgid ""
+"<span>Unknown\n"
+"                                                            Partner\n"
+"                                                        </span>"
+msgstr "Невідомий партнер"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "ASSETS"
+msgstr "АКТИВИ"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Account"
+msgstr "Обліковий запис"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_bank_book_report
+msgid "Account Bank Book Report"
+msgstr "Звіт про банківську книгу"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_cash_book_report
+msgid "Account Cash Book Report"
+msgstr "Звіт по касовій книзі рахунку"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__account_ids
+#, python-format
+msgid "Accounts"
+msgstr "Облікові записи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Accounts:"
+msgstr "Облікові записи:"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_aged_payable
+msgid "Age Payable"
+msgstr "Оплачується вік"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_aged_receivable
+msgid "Age Receivable"
+msgstr "Вік дебіторської заборгованості"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_aged_payable
+#: model:ir.ui.menu,name:account_dynamic_reports.aged_payable_menu
+msgid "Aged Payable"
+msgstr "Виплачується за віком"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_age_payable_report
+msgid "Aged Payable Report"
+msgstr "Звіт про застарілу плату"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_aged_receivable
+#: model:ir.ui.menu,name:account_dynamic_reports.aged_receivable_menu
+msgid "Aged Receivable"
+msgstr "Застаріла дебіторська заборгованість"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_age_receivable_report
+msgid "Aged Receivable Report"
+msgstr "Звіт про застарілу дебіторську заборгованість"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "Amount Currency"
+msgstr "Сума Валюта"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid "Analytic Account"
+msgstr "Аналітичний рахунок"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__analytic_ids
+msgid "Analytic Accounts"
+msgstr "Аналітичні рахунки"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Analytic Accounts:"
+msgstr "Аналітичні рахунки:"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__analytic_ids
+msgid "Analytic accounts associated with the current record."
+msgstr "Аналітичні рахунки, пов'язані з поточним записом."
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Apply"
+msgstr "Застосувати"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#, python-format
+msgid "At Date"
+msgstr "На дату"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.balance_sheet
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+#, python-format
+msgid "Balance"
+msgstr "Баланс"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_dynamic_balance_sheet
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_balance_sheet
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_balance_sheet_report
+msgid "Balance Sheet"
+msgstr "Бухгалтерський баланс"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_bank_book
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_bank_book
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_bank_book
+msgid "Bank Book"
+msgstr "Банківська книга"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Bank and\n"
+"                                                    Cash Accounts"
+msgstr "Банківські та касові рахунки"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Bank and Cash Accounts"
+msgstr "Банківські та касові рахунки"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_cash_book
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_cash_book
+msgid "Cash Book"
+msgstr "Касова книга"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Cash basis method"
+msgstr "Касовий метод"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#, python-format
+msgid "Communication"
+msgstr "спілкування"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Comparison"
+msgstr "Порівняння"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Cost\n"
+"                                                                of\n"
+"                                                                Revenue"
+msgstr "Вартість доходу"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Cost of\n"
+"                                                        Revenue"
+msgstr "Вартість доходу"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_general_ledger__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_partner_ledger__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_trial_balance__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_payable_report__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_receivable_report__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_bank_book_report__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_cash_book_report__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__create_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_tax_report__create_uid
+msgid "Created by"
+msgstr "Створений"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_general_ledger__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_partner_ledger__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_trial_balance__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_payable_report__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_receivable_report__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_bank_book_report__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_cash_book_report__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__create_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_tax_report__create_date
+msgid "Created on"
+msgstr "Створено на"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Credit"
+msgstr "Кредит"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#, python-format
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Current\n"
+"                                                    Allocated Earnings"
+msgstr "Поточний розподілений прибуток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Current\n"
+"                                                    Assets"
+msgstr "Оборотні активи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Current\n"
+"                                                    Earnings"
+msgstr "Поточний прибуток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Current Allocated\n"
+"                                                            Earnings"
+msgstr "Поточний розподілений прибуток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Current Assets"
+msgstr "Оборотні активи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Current Liabilities"
+msgstr "Поточні зобов'язання"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#, python-format
+msgid "Date"
+msgstr "Дата"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#, python-format
+msgid ""
+"Date\n"
+"                                            :"
+msgstr "Дата:"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Date Range"
+msgstr "Проміжок часу"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Dates"
+msgstr "дати"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Debit"
+msgstr "Дебетовий"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Depreciation"
+msgstr "Амортизація"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_general_ledger__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_partner_ledger__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_trial_balance__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_payable_report__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_receivable_report__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_bank_book_report__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_cash_book_report__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__display_name
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_tax_report__display_name
+msgid "Display Name"
+msgstr "Відображуване ім'я"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__dynamic_balance_sheet_report__target_move__draft
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "Due Date"
+msgstr "Термін виконання"
+
+#. module: account_dynamic_reports
+#: model:ir.ui.menu,name:account_dynamic_reports.dynamic_report_accounting
+msgid "Dynamic Financial Reports"
+msgstr "Динамічні фінансові звіти"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "EQUITY"
+msgstr "ВЛАСНИЙ КАПІТАЛ"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"End\n"
+"                                                Date\n"
+"                                                :"
+msgstr "Дата закінчення:"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "End Balance"
+msgstr "Кінцевий баланс"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid ""
+"End Date\n"
+"                                            :"
+msgstr "Дата закінчення:"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__date_to
+msgid "End date"
+msgstr "Дата закінчення"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#, python-format
+msgid "End of Last Month"
+msgstr "Кінець минулого місяця"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#, python-format
+msgid "End of Last Quarter"
+msgstr "Кінець останньої чверті"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#, python-format
+msgid "End of Last year"
+msgstr "Кінець минулого року"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#, python-format
+msgid "Entry label"
+msgstr "Вхідна мітка"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#, python-format
+msgid "Expected Date"
+msgstr "Очікувана дата"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Expenses"
+msgstr "Витрати"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Export (XLSX)"
+msgstr "Експорт (XLSX)"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"General\n"
+"                                                                                Ledger"
+msgstr "Головна книга"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"General\n"
+"                                                                    Ledger"
+msgstr "Головна книга"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model:ir.actions.client,name:account_dynamic_reports.action_general_ledger
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_general_ledger
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_general_ledger
+#, python-format
+msgid "General Ledger"
+msgstr "Головна книга"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_account_general_ledger
+msgid "General Ledger Report"
+msgstr "Звіт Головної книги"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Generic Tax Report"
+msgstr "Типовий податковий звіт"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Gross Profit"
+msgstr "Загальний прибуток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Group by: Account > Tax"
+msgstr "Згрупуйте за: Рахунок > Податок"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Group by: Tax > Account"
+msgstr "Згрупуйте за: податок > рахунок"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_general_ledger__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_partner_ledger__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_trial_balance__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_payable_report__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_receivable_report__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_bank_book_report__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_cash_book_report__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__id
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_tax_report__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Include Draft Entries"
+msgstr "Включити чернетки"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Income"
+msgstr "Дохід"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Initial Balance"
+msgstr "Початковий баланс"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#, python-format
+msgid "Invoice Date"
+msgstr "Дата рахунку-фактури"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "JRNL"
+msgstr "JRNL"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Journal"
+msgstr "журнал"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Journal Items"
+msgstr "Елементи журналу"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__journal_ids
+#, python-format
+msgid "Journals"
+msgstr "Журнали"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Journals:"
+msgstr "Журнали:"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "LIABILITIES"
+msgstr "ЗОБОВ'ЯЗАННЯ"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "LIABILITIES + EQUITY"
+msgstr "ЗОБОВ'ЯЗАННЯ + ВЛАСНИЙ КАПІТАЛ"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_general_ledger__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_partner_ledger__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_trial_balance__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_payable_report__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_receivable_report__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_bank_book_report__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_cash_book_report__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__write_uid
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_tax_report__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновлено"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_general_ledger__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_partner_ledger__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_account_trial_balance__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_payable_report__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_age_receivable_report__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_bank_book_report__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_cash_book_report__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__write_date
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_tax_report__write_date
+msgid "Last Updated on"
+msgstr "Востаннє оновлено"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Last month"
+msgstr "Минулого місяця"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Last quarter"
+msgstr "Остання чверть"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Last year"
+msgstr "Минулого року"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "Matching Number"
+msgstr "відповідний номер"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#, python-format
+msgid "Move"
+msgstr "рухатися"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+#, python-format
+msgid "NET"
+msgstr "NET"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Net Profit"
+msgstr "Чистий дохід"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "No Comparison"
+msgstr "Без порівняння"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Number of Periods:"
+msgstr "Кількість періодів:"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#, python-format
+msgid "Older"
+msgstr "Старший"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#, python-format
+msgid "Open"
+msgstr "ВІДЧИНЕНО"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Operating\n"
+"                                                                Income"
+msgstr "Операційний дохід"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Operating\n"
+"                                                        Income"
+msgstr "Операційний дохід"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+#, python-format
+msgid "Options"
+msgstr "Опції"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Options : Posted Entries"
+msgstr "Параметри: Опубліковані записи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Options : Posted Entries ,"
+msgstr "Параметри: Опубліковані записи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#, python-format
+msgid "Options :Posted Entries"
+msgstr "Параметри: Опубліковані записи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#, python-format
+msgid "Options :Posted Entries ,"
+msgstr "Параметри: Опубліковані записи,"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Other\n"
+"                                                        Income"
+msgstr "Інші прибутки"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Other Income"
+msgstr "Інші прибутки"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_partner_ledger
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_partner_ledger
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_partner_ledger
+msgid "Partner Ledger"
+msgstr "Партнерська книга"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_account_partner_ledger
+msgid "Partner Ledger Report"
+msgstr "Звіт про партнерську книгу"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#, python-format
+msgid "Payable"
+msgstr "Підлягає оплаті"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Payables"
+msgstr "Кредиторська заборгованість"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Plus\n"
+"                                                    Non-current Assets"
+msgstr "Плюс необоротні активи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Plus\n"
+"                                                    Non-current Liabilities"
+msgstr "Плюс довгострокові зобов'язання"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Plus Fixed\n"
+"                                                    Assets"
+msgstr "Плюс Основні засоби"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Plus Fixed Assets"
+msgstr "Плюс Основні засоби"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Plus Non-current Assets"
+msgstr "Плюс необоротні активи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Plus Non-current Liabilities"
+msgstr "Плюс довгострокові зобов'язання"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields.selection,name:account_dynamic_reports.selection__dynamic_balance_sheet_report__target_move__posted
+msgid "Posted"
+msgstr "Опубліковано"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+msgid "Posted ,"
+msgstr "Опубліковано ,"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Posted Entries"
+msgstr "Опубліковані записи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Prepayments"
+msgstr "Передоплати"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Previous Period"
+msgstr "Попередній період"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Print (PDF)"
+msgstr "Роздрукувати (PDF)"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_profit_loss
+msgid "Profit And Loss"
+msgstr "Прибуток і збиток"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_dynamic_balance_sheet_report
+msgid "Profit Loss Report"
+msgstr "Звіт про збитки прибутку"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_dynamic_profit_and_loss
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_profit_and_loss_report
+msgid "Profit and Loss"
+msgstr "Прибуток і збиток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Purchase"
+msgstr "Купівля"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#, python-format
+msgid "Receivable"
+msgstr "дебіторська заборгованість"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Receivables"
+msgstr "Дебіторська заборгованість"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "Ref"
+msgstr "посилання"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#, python-format
+msgid "Reference"
+msgstr "довідка"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+msgid "Report"
+msgstr "звіт"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Reports :"
+msgstr "звіт :"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid ""
+"Retained\n"
+"                                                    Earnings"
+msgstr "Нерозподілений прибуток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Retained Earnings"
+msgstr "Нерозподілений прибуток"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#, python-format
+msgid "Sales"
+msgstr "Продажі"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "Same Period Last Year"
+msgstr "Такий самий період минулого року"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__account_ids
+msgid "Select one or more accounts."
+msgstr "Виберіть один або кілька облікових записів."
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__journal_ids
+msgid "Select one or more journals."
+msgstr "Виберіть один або декілька журналів."
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__company_id
+msgid "Select the company to which this record belongs."
+msgstr "Виберіть компанію, якій належить цей запис."
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__target_move
+msgid "Select the target move status."
+msgstr "Виберіть статус цільового переміщення."
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__date_to
+msgid "Specify the end date."
+msgstr "Вкажіть кінцеву дату."
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,help:account_dynamic_reports.field_dynamic_balance_sheet_report__date_from
+msgid "Specify the start date."
+msgstr "Вкажіть дату початку."
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Start\n"
+"                                                Date :"
+msgstr "Дата початку :"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid ""
+"Start\n"
+"                                            Date :"
+msgstr "Дата початку :"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__date_from
+msgid "Start date"
+msgstr "Дата початку"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+#, python-format
+msgid "TAX"
+msgstr "ПОДАТОК"
+
+#. module: account_dynamic_reports
+#: model:ir.model.fields,field_description:account_dynamic_reports.field_dynamic_balance_sheet_report__target_move
+msgid "Target Move"
+msgstr "Цільове переміщення"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Target Move:"
+msgstr "Цільовий хід:"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.profit_loss
+msgid "Target move"
+msgstr "Цільовий хід"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_tax_report
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_tax_report
+#: model:ir.model,name:account_dynamic_reports.model_tax_report
+#: model:ir.ui.menu,name:account_dynamic_reports.tax_report_menu
+msgid "Tax Report"
+msgstr "Податковий звіт"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "This Month"
+msgstr "Цього місяця"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "This Quarter"
+msgstr "Цей квартал"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/tax_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#, python-format
+msgid "This Year"
+msgstr "Цього року"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#, python-format
+msgid "Today"
+msgstr "Сьогодні"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/trial_balance_view.xml:0
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_payable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.aged_receivable
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#, python-format
+msgid "Total"
+msgstr "Всього"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid ""
+"Total\n"
+"                                                    Expenses"
+msgstr "Загальні витрати"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Total ASSETS"
+msgstr "Сукупні активи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Total Current Assets"
+msgstr "Загальні оборотні активи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Total Current Liabilities"
+msgstr "Загальна сума поточних зобов'язань"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Total EQUITY"
+msgstr "Сукупний капітал"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Total Income"
+msgstr "Загальний дохід"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Total LIABILITIES"
+msgstr "Всього ЗОБОВ'ЯЗАНЬ"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Total Unallocated Earnings"
+msgstr "Загальний нерозподілений прибуток"
+
+#. module: account_dynamic_reports
+#: model:ir.actions.client,name:account_dynamic_reports.action_trial_balance
+#: model:ir.actions.report,name:account_dynamic_reports.action_print_trial_balance
+#: model:ir.ui.menu,name:account_dynamic_reports.menu_trial_balance
+msgid "Trial Balance"
+msgstr "Пробний баланс"
+
+#. module: account_dynamic_reports
+#: model:ir.model,name:account_dynamic_reports.model_account_trial_balance
+msgid "Trial Balance Report"
+msgstr "Звіт про пробний баланс"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#, python-format
+msgid "Unallocated Earnings"
+msgstr "Нерозподілені прибутки"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/balance_sheet_template.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/profit_and_loss_templates.xml:0
+#, python-format
+msgid "Unfold All"
+msgstr "Розгорнути все"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#, python-format
+msgid ""
+"Unknown\n"
+"                                                                    Accounts"
+msgstr "Невідомі облікові записи"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#, python-format
+msgid ""
+"Unknown\n"
+"                                                                    Partner"
+msgstr "Невідомий партнер"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_payable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/aged_receivable_report_views.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/bank_flow_templates.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/cash_flow_templates.xml:0
+#, python-format
+msgid ""
+"View\n"
+"                                                                        Journal\n"
+"                                                                        Entry"
+msgstr "Переглянути запис журналу"
+
+#. module: account_dynamic_reports
+#. odoo-javascript
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/cust1/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/general_ledger_view.xml:0
+#: code:addons/account_dynamic_reports/static/src/xml/partner_ledger_view.xml:0
+#, python-format
+msgid ""
+"View\n"
+"                                                                    Journal\n"
+"                                                                    Entry"
+msgstr "Переглянути запис журналу"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+msgid "posted,"
+msgstr "розміщено,"
+
+#. module: account_dynamic_reports
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.bank_book
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.general_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.partner_ledger
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.tax_report
+#: model_terms:ir.ui.view,arch_db:account_dynamic_reports.trial_balance
+msgid "to"
+msgstr "до"

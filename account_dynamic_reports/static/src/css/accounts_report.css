@@ -1,0 +1,864 @@
+/* Premium Dynamic Reports UI */
+.report-filter-button {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin: 4px;
+    transition: all 0.2s ease;
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.report-filter-button:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    color: #212529;
+}
+
+/* Table Aesthetics */
+.table_main_view table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 2rem;
+    color: #333;
+    width: 100%;
+}
+
+.table_main_view thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    border-bottom: 2px solid #dee2e6;
+    border-top: none;
+}
+
+.table_main_view tbody tr th, 
+.table_main_view tbody tr td {
+    padding: 12px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f3f5;
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+
+/* Hover effects */
+.table_main_view tbody tr:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.15s ease-in-out;
+}
+
+/* Caret styling */
+a[data-bs-toggle="collapse"], div[data-bs-toggle="collapse"] .o_heading {
+    color: #212529 !important;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+    color: #6c757d;
+    transition: transform 0.2s;
+}
+
+/* Subtle action button (replacing big gray Journal Items button) */
+.btn-journal-items {
+    background: transparent;
+    border: none;
+    color: #714B67;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    opacity: 0.6;
+    transition: all 0.2s;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-journal-items:hover {
+    opacity: 1;
+    background-color: rgba(113, 75, 103, 0.1);
+}
+
+.btn-journal-entry {
+    color: #017e84;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.btn-journal-entry:hover {
+    color: #015e63;
+}
+
+/* Inner tables / collapsed rows */
+tr.collapse th, 
+tr.collapse td {
+    background-color: #fdfdfe;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Text alignment helpers */
+.text-right {
+    text-align: right !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+
+.amount-column {
+    font-family: monospace;
+    font-size: 0.95rem;
+    text-align: right;
+}
+/* Enterprise-style balance-sheet canvas; scoped to the TKG client action. */
+.o_tkg_balance_sheet {
+    --tkg-report-border: #d8dadd;
+    --tkg-report-muted: #6b7280;
+    --tkg-report-heading: #e7e9ec;
+    --tkg-report-total: #f4f5f6;
+    background: #f8f9fa;
+    min-height: 100%;
+    padding: 1.5rem 0 3rem;
+}
+
+.o_tkg_balance_sheet .fin_report {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.o_tkg_balance_sheet .filter_view_dfr {
+    margin: 0 1.5rem 1rem;
+    padding: 0 !important;
+}
+
+.o_tkg_balance_sheet_scroll {
+    height: auto !important;
+    max-height: none;
+    overflow: visible !important;
+}
+
+.o_tkg_balance_sheet_canvas {
+    margin: 0 1.5rem;
+    padding: 1.25rem 1.5rem !important;
+    background: #fff;
+    border: 1px solid var(--tkg-report-border);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+}
+
+.o_tkg_balance_sheet .table_main_view table {
+    margin: 0;
+    color: #1f2937;
+}
+
+.o_tkg_balance_sheet .table_main_view thead th {
+    padding: .35rem .75rem .55rem;
+    background: transparent;
+    border: 0;
+    color: var(--tkg-report-muted);
+    font-size: .8125rem;
+    font-weight: 600;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr th,
+.o_tkg_balance_sheet .table_main_view tbody tr td {
+    padding: .42rem .75rem;
+    border-bottom-color: var(--tkg-report-border);
+    font-size: .875rem;
+    line-height: 1.45;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr th.text-end,
+.o_tkg_balance_sheet .table_main_view tbody tr td.text-end {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th {
+    padding: .42rem 2rem;
+    background: var(--tkg-report-heading);
+    border-bottom: 0;
+    color: #24364b;
+    font-size: .8125rem;
+    font-weight: 700;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="9"]) > th,
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="6"]) > th {
+    color: #24364b;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="9"]) > th {
+    padding-top: .55rem;
+    padding-bottom: .35rem;
+    font-weight: 700;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(.fw-bolder) > th,
+.o_tkg_balance_sheet .table_main_view tbody tr:has(.fw-bold) > th {
+    background: var(--tkg-report-total);
+    font-weight: 700;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(.fw-bolder) > th.text-end,
+.o_tkg_balance_sheet .table_main_view tbody tr:has(.fw-bold) > th.text-end {
+    color: #111827;
+}
+
+.o_tkg_balance_sheet a[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet div[data-bs-toggle="collapse"] {
+    color: inherit !important;
+}
+
+.o_tkg_balance_sheet .header {
+    min-height: 0;
+    padding: 0;
+    color: inherit;
+    font-weight: 500;
+}
+
+.o_tkg_balance_sheet .toggle-icon {
+    width: 1rem;
+    margin-right: .3rem;
+    color: #64748b;
+}
+
+.o_tkg_balance_sheet [data-bs-toggle="collapse"].collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.o_tkg_balance_sheet .dropdown-toggle::after {
+    margin-left: .3rem;
+    vertical-align: .12em;
+}
+
+.o_tkg_balance_sheet .dropdown-menu {
+    border-color: var(--tkg-report-border);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .12);
+}
+
+@media (max-width: 767.98px) {
+    .o_tkg_balance_sheet {
+        padding-top: .75rem;
+    }
+
+    .o_tkg_balance_sheet .filter_view_dfr,
+    .o_tkg_balance_sheet_canvas {
+        margin-right: .75rem;
+        margin-left: .75rem;
+    }
+
+    .o_tkg_balance_sheet_canvas {
+        padding: .75rem !important;
+        overflow-x: auto;
+    }
+}
+/* Match the Enterprise report control panel while preserving existing handlers. */
+.o_tkg_balance_sheet .filter_view_dfr {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    background: #fff;
+    border: 1px solid #d8dadd;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+}
+
+.o_tkg_balance_sheet .filter_view_dfr > div:first-child h2 {
+    margin: 0;
+    padding: 0 .75rem !important;
+    color: #1f2937;
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none !important;
+}
+
+.o_tkg_balance_sheet .sub_container_right {
+    align-items: center;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: .25rem !important;
+    margin: 0 .5rem 0 0 !important;
+}
+
+.o_tkg_balance_sheet .report_print {
+    display: inline-flex;
+    gap: .25rem;
+    margin-right: .25rem;
+}
+
+.o_tkg_balance_sheet .report_print .btn-report-print,
+.o_tkg_balance_sheet .time_range > a,
+.o_tkg_balance_sheet .comparison_range > a,
+.o_tkg_balance_sheet .journals_filter > a,
+.o_tkg_balance_sheet .accounts_filter > a,
+.o_tkg_balance_sheet .analytic_filter > a,
+.o_tkg_balance_sheet .search_Target_move > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: .34rem .55rem;
+    border: 1px solid #d8dadd;
+    border-radius: 3px;
+    background: #f5f6f8;
+    color: #374151;
+    font-size: .8125rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.o_tkg_balance_sheet .report_print .btn-report-print {
+    margin: 0 !important;
+    background: #714b67;
+    border-color: #714b67;
+    color: #fff;
+}
+
+.o_tkg_balance_sheet .report_print .btn-report-print + .btn-report-print {
+    background: #f5f6f8;
+    border-color: #d8dadd;
+    color: #374151;
+}
+
+.o_tkg_balance_sheet .time_range > a:hover,
+.o_tkg_balance_sheet .comparison_range > a:hover,
+.o_tkg_balance_sheet .journals_filter > a:hover,
+.o_tkg_balance_sheet .accounts_filter > a:hover,
+.o_tkg_balance_sheet .analytic_filter > a:hover,
+.o_tkg_balance_sheet .search_Target_move > a:hover,
+.o_tkg_balance_sheet .report_print .btn-report-print + .btn-report-print:hover {
+    background: #eaecf0;
+    color: #1f2937;
+}
+
+.o_tkg_balance_sheet .report_print .btn-report-print:hover {
+    background: #5e3e55;
+    border-color: #5e3e55;
+    color: #fff;
+}
+
+.o_tkg_balance_sheet .filter_view_dfr .dropdown-menu {
+    min-width: 14rem;
+    padding: .35rem;
+}
+
+.o_tkg_balance_sheet .filter_view_dfr .dropdown-menu .report-filter-button {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    text-align: left;
+}
+
+.o_tkg_balance_sheet .filter_view_dfr .dropdown-menu .report-filter-button:hover,
+.o_tkg_balance_sheet .filter_view_dfr .dropdown-menu .report-filter-button.selected-filter {
+    background: #f0e9ef;
+    color: #714b67;
+}
+
+.o_tkg_balance_sheet .filter_view_dfr .dropdown-divider {
+    margin: .35rem 0;
+}
+
+@media (max-width: 991.98px) {
+    .o_tkg_balance_sheet .filter_view_dfr {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: .5rem 0;
+    }
+
+    .o_tkg_balance_sheet .sub_container_right {
+        width: calc(100% - 1rem);
+        margin: 0 .5rem !important;
+    }
+}
+/* Interaction fixes for the Balance Sheet client action. */
+.o_tkg_balance_sheet {
+    box-sizing: border-box;
+    height: 100% !important;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+}
+
+.o_tkg_balance_sheet .o_tkg_balance_sheet_scroll {
+    height: auto !important;
+    min-height: min-content;
+    overflow: visible !important;
+}
+
+.o_tkg_balance_sheet .filter_view_dfr .fa {
+    display: inline-block;
+    width: 1rem;
+    margin-right: .32rem;
+    text-align: center;
+}
+
+.o_tkg_report_sheet_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2.25rem;
+    margin: 0 0 .75rem;
+    padding: .35rem .75rem;
+    border-bottom: 1px solid var(--tkg-report-border);
+    color: #374151;
+    font-size: .8125rem;
+}
+
+.o_tkg_report_sheet_header_label {
+    margin-right: .5rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.o_tkg_report_sheet_header_company {
+    color: #1f2937;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: right;
+}
+/* Keep the report control panel on one desktop row. */
+@media (min-width: 992px) {
+    .o_tkg_balance_sheet .filter_view_dfr {
+        flex-wrap: nowrap;
+    }
+
+    .o_tkg_balance_sheet .sub_container_right {
+        flex-wrap: nowrap !important;
+        min-width: 0;
+        overflow: visible;
+    }
+
+    .o_tkg_balance_sheet .filter_view_dfr .filter {
+        flex-wrap: nowrap !important;
+        gap: .25rem !important;
+    }
+
+    .o_tkg_balance_sheet .report_print {
+        flex: 0 0 auto;
+    }
+
+    .o_tkg_balance_sheet .time_range,
+    .o_tkg_balance_sheet .comparison_range,
+    .o_tkg_balance_sheet .journals_filter,
+    .o_tkg_balance_sheet .accounts_filter,
+    .o_tkg_balance_sheet .analytic_filter,
+    .o_tkg_balance_sheet .search_Target_move {
+        flex: 0 0 auto;
+        max-width: none !important;
+    }
+
+    .o_tkg_balance_sheet .analytic_filter > a,
+    .o_tkg_balance_sheet .accounts_filter > a {
+        min-width: 0 !important;
+        text-wrap: nowrap !important;
+        white-space: nowrap !important;
+    }
+}
+/* Use the available page width for the report toolbar instead of adding a scrollbar. */
+.o_tkg_balance_sheet .fin_report {
+    max-width: none;
+    width: 100%;
+}
+/* Date and comparison dropdowns: structured fields instead of the legacy stacked form. */
+.o_tkg_balance_sheet .time_range .dropdown-menu,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu {
+    min-width: 17rem;
+    padding: .45rem;
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu .list-group,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu .list-group {
+    gap: .1rem;
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu label,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu label {
+    display: block !important;
+    padding: .55rem .45rem .18rem !important;
+    color: #4b5563 !important;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu .input-group,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu .input-group {
+    width: 100%;
+    padding: 0 .45rem .35rem;
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu input,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu input {
+    width: 100%;
+    min-height: 32px;
+    padding: .35rem .5rem !important;
+    border: 1px solid #cfd4da !important;
+    border-radius: 3px;
+    background: #fff;
+    color: #374151;
+    font-size: .8125rem;
+    outline: 0;
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu input:focus,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu input:focus {
+    border-color: #714b67 !important;
+    box-shadow: 0 0 0 .15rem rgba(113, 75, 103, .12);
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu .btn-primary,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu .btn-primary {
+    margin: .15rem .45rem .45rem !important;
+    padding: .35rem .7rem;
+    border: 0;
+    border-radius: 3px;
+    background: #714b67;
+    font-size: .8125rem;
+    font-weight: 600;
+}
+
+.o_tkg_balance_sheet .time_range .dropdown-menu .btn-primary:hover,
+.o_tkg_balance_sheet .comparison_range .dropdown-menu .btn-primary:hover {
+    background: #5e3e55;
+}
+/* Desktop report width: two-thirds of the work area, shared by toolbar and figures. */
+@media (min-width: 992px) {
+    .o_tkg_balance_sheet .fin_report,
+    .o_tkg_balance_sheet .o_tkg_balance_sheet_canvas {
+        width: 66.666667%;
+        max-width: none;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .o_tkg_balance_sheet .filter_view_dfr {
+        margin: 0 0 1rem;
+    }
+
+    .o_tkg_balance_sheet .o_tkg_balance_sheet_canvas {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .o_tkg_balance_sheet .fin_report,
+    .o_tkg_balance_sheet .o_tkg_balance_sheet_canvas {
+        width: auto;
+        margin-right: .75rem;
+        margin-left: .75rem;
+    }
+}
+/* Selected companies share the native report header row with the period. */
+.o_tkg_balance_sheet .table_main_view .o_tkg_table_companies {
+    display: inline-block;
+    color: #374151;
+    font-size: .8125rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+
+/* Keep both export actions legible on the primary button background. */
+.o_tkg_balance_sheet .btn-report-print {
+    color: #fff !important;
+}
+
+
+/* Empty account-type rows retain the same hierarchy as expandable peers. */
+.o_tkg_balance_sheet .o_tkg_empty_peer {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+}
+.o_tkg_balance_sheet .o_tkg_toggle_placeholder {
+    display: inline-block;
+    width: 1rem;
+}
+
+/* All zero-value peer sections use the same visual hierarchy as expanded peers. */
+.o_tkg_balance_sheet .table_main_view th > span.ms-4 {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 1rem !important;
+    font-weight: 400;
+}
+.o_tkg_balance_sheet .table_main_view th > span.ms-4::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    margin-right: 1rem;
+}
+
+/* Preserve the exact caret column width for empty peer rows. */
+.o_tkg_balance_sheet .o_tkg_toggle_placeholder {
+    visibility: hidden;
+}
+
+
+/* Enterprise-like Balance Sheet indentation. Keep hierarchy compact and consistent. */
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th {
+    padding-left: 1.75rem;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="9"]) > th > span.ms-2,
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="6"] .fw-bolder.ms-2) > th > span.ms-2 {
+    margin-left: 1.45rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"].ms-3 {
+    margin-left: 1.45rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > span[data-bs-toggle="collapse"] {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 1.45rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody .header .ms-3,
+.o_tkg_balance_sheet .table_main_view tbody th > span[data-bs-toggle="collapse"] + span.ms-4 {
+    margin-left: .55rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th .dropdown-toggle > span.ms-5,
+.o_tkg_balance_sheet .table_main_view tbody th > span.ms-5,
+.o_tkg_balance_sheet .table_main_view tbody th > span.fw-bolder.ms-5 {
+    margin-left: 3.2rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > span.ms-4 {
+    margin-left: 1.45rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > span.ms-4::before {
+    width: 1rem;
+    margin-right: .55rem;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr.collapse th {
+    color: #344054;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr.collapse:has(.fw-bolder) th {
+    background: transparent;
+}
+
+
+/* Keep main section bands bold like Odoo Enterprise. */
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th,
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th > span {
+    font-weight: 700 !important;
+}
+
+
+/* Add Enterprise-like breathing room between major Balance Sheet sections. */
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th {
+    padding-top: .62rem;
+    padding-bottom: .62rem;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]):not(:first-child) > th {
+    border-top: .95rem solid #fff;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"] .header {
+    cursor: pointer;
+}
+
+
+/* Balance Sheet: only major parent section bands use grey background. */
+.o_tkg_balance_sheet .table_main_view tbody tr:has(.fw-bolder) > th,
+.o_tkg_balance_sheet .table_main_view tbody tr:has(.fw-bold) > th {
+    background: transparent !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th {
+    background: var(--tkg-report-heading) !important;
+}
+
+
+/* Balance Sheet amount semantics and natural expandable-row behavior. */
+.o_tkg_balance_sheet .o_tkg_bs_amount_negative {
+    color: #c0392b !important;
+}
+
+.o_tkg_balance_sheet .o_tkg_bs_amount_zero {
+    color: #c9d0d8 !important;
+}
+
+.o_tkg_balance_sheet .o_tkg_clickable_row > th,
+.o_tkg_balance_sheet .o_tkg_clickable_row > td {
+    cursor: pointer;
+}
+
+.o_tkg_balance_sheet .o_tkg_clickable_row:hover > th,
+.o_tkg_balance_sheet .o_tkg_clickable_row:hover > td {
+    background: #f8fafc !important;
+}
+
+.o_tkg_balance_sheet th > div[data-bs-toggle="collapse"] .toggle-icon .fa {
+    display: inline-block;
+    transition: transform .12s ease-in-out, color .12s ease-in-out;
+}
+
+.o_tkg_balance_sheet th > div[data-bs-toggle="collapse"].collapsed .toggle-icon .fa {
+    transform: rotate(-90deg);
+}
+
+.o_tkg_balance_sheet th > div[data-bs-toggle="collapse"][aria-expanded="true"] .toggle-icon .fa {
+    transform: rotate(0deg);
+}
+
+/* Balance Sheet row rhythm: keep text rows visually even across toggles,
+   totals, child rows, and non-expandable rows. Major section spacing stays
+   separate so Assets/Liabilities/Equity still breathe like Enterprise. */
+.o_tkg_balance_sheet .table_main_view tbody tr:not(:has(> th[colspan="8"])) > th,
+.o_tkg_balance_sheet .table_main_view tbody tr:not(:has(> th[colspan="8"])) > td {
+    height: 36px;
+    padding-top: .43rem !important;
+    padding-bottom: .43rem !important;
+    line-height: 1.35 !important;
+    vertical-align: middle !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody tr:has(> th[colspan="8"]) > th {
+    height: 34px;
+    padding-top: .44rem !important;
+    padding-bottom: .44rem !important;
+    line-height: 1.25 !important;
+    vertical-align: middle !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th > span[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th .header {
+    min-height: 0 !important;
+    line-height: inherit !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th .toggle-icon,
+.o_tkg_balance_sheet .table_main_view tbody th .o_tkg_toggle_placeholder {
+    line-height: 1 !important;
+}
+
+/* Balance Sheet label rhythm: make toggleable and plain rows use the same
+   inner vertical box so caret rows do not look taller than non-caret rows. */
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th > span[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th > span:not(.text-muted):not(.o_tkg_bs_amount_negative):not(.o_tkg_bs_amount_zero),
+.o_tkg_balance_sheet .table_main_view tbody th .dropdown-toggle {
+    min-height: 20px !important;
+    line-height: 20px !important;
+    align-items: center !important;
+    vertical-align: middle !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th > span[data-bs-toggle="collapse"],
+.o_tkg_balance_sheet .table_main_view tbody th .dropdown-toggle {
+    display: inline-flex !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th > div[data-bs-toggle="collapse"] .header,
+.o_tkg_balance_sheet .table_main_view tbody th > span[data-bs-toggle="collapse"] .header,
+.o_tkg_balance_sheet .table_main_view tbody th .dropdown-toggle .header {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 20px !important;
+    line-height: 20px !important;
+    padding: 0 !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th .toggle-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1rem !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    line-height: 20px !important;
+    flex: 0 0 1rem !important;
+}
+
+.o_tkg_balance_sheet .table_main_view tbody th .toggle-icon .fa,
+.o_tkg_balance_sheet .table_main_view tbody th .o_tkg_toggle_placeholder {
+    line-height: 1 !important;
+    font-size: .78rem !important;
+}
+/* General Ledger / Trial Balance report polish: mirror the Balance Sheet row
+   rhythm and interaction rules without making plain rows look clickable. */
+.o_tkg_general_ledger .o_tkg_bs_amount_negative,
+.o_tkg_trial_balance .o_tkg_bs_amount_negative {
+    color: #c0392b !important;
+}
+
+.o_tkg_general_ledger .o_tkg_bs_amount_zero,
+.o_tkg_trial_balance .o_tkg_bs_amount_zero {
+    color: #c9d0d8 !important;
+}
+
+.o_tkg_general_ledger .table_main_view tbody tr > th,
+.o_tkg_general_ledger .table_main_view tbody tr > td,
+.o_tkg_trial_balance .table_main_view tbody tr > th,
+.o_tkg_trial_balance .table_main_view tbody tr > td {
+    height: 36px;
+    padding-top: .43rem !important;
+    padding-bottom: .43rem !important;
+    line-height: 1.35 !important;
+    vertical-align: middle !important;
+}
+
+.o_tkg_general_ledger .table_main_view tbody th > div[data-bs-toggle="collapse"],
+.o_tkg_general_ledger .table_main_view tbody th > span[data-bs-toggle="collapse"],
+.o_tkg_general_ledger .table_main_view tbody th .dropdown-toggle,
+.o_tkg_trial_balance .table_main_view tbody th .dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 20px !important;
+    line-height: 20px !important;
+    vertical-align: middle !important;
+}
+
+.o_tkg_general_ledger .table_main_view tbody th .toggle-icon,
+.o_tkg_trial_balance .table_main_view tbody th .toggle-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1rem !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    line-height: 20px !important;
+    flex: 0 0 1rem !important;
+}
+
+.o_tkg_general_ledger .o_tkg_clickable_row > th,
+.o_tkg_general_ledger .o_tkg_clickable_row > td {
+    cursor: pointer;
+}
+
+.o_tkg_general_ledger .o_tkg_clickable_row:hover > th,
+.o_tkg_general_ledger .o_tkg_clickable_row:hover > td {
+    background: #f8fafc !important;
+}

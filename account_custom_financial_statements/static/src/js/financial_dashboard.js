@@ -13,6 +13,7 @@ export class FinancialDashboard extends Component {
         this.state = useState({
             data: null,
             loading: true,
+            expanded: {},
         });
 
         onWillStart(async () => {
@@ -27,6 +28,14 @@ export class FinancialDashboard extends Component {
             }
             this.state.loading = false;
         });
+    }
+
+    isExpanded(key) {
+        return this.state.expanded[key] !== false;
+    }
+
+    toggleSection(key) {
+        this.state.expanded[key] = !this.isExpanded(key);
     }
 
     async openLines(domainStr) {
